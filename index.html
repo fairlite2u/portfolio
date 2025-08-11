@@ -1,35 +1,685 @@
-<!doctype html>
-<html lang="en-us">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Porfolio | Jennifer C. Thomas | BYU-Idaho</title>
-  <meta name="description" content="Portfolio for Jennifer Thomas">
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jennifer Thomas - Developer Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #64748b;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 0 80px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #2563eb;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 3rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-image {
+      height: 200px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+      position: relative;
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .overlay-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .overlay-btn {
+      background: white;
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-description {
+      color: #64748b;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tech-tag {
+      background: #e2e8f0;
+      color: #475569;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Featured Project */
+    .featured-project {
+      background: #f8fafc;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      border: 2px solid #e2e8f0;
+    }
+
+    .featured-badge {
+      background: #2563eb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .featured-content {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .featured-image {
+      height: 250px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: white;
+    }
+
+    /* Skills Quick View */
+    .skills-section {
+      background: #1e293b;
+      color: white;
+      padding: 60px 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .skill-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #94a3b8;
+    }
+
+    .skill-item p {
+      color: white;
+      font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      color: #1e293b;
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      color: #64748b;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #2563eb;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .contact-link:hover {
+      background: #2563eb;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <h1>Jennifer Thomas</h1>
+    <nav>
+      <div class="logo">Jennifer Thomas</div>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <h2>Project Portfolio</h2>
-    <ul>
-      <li><a href="tech-moms/index.html">Neon Space Arcade</a></li>
-      <li><a href="cit230/templeinn/index.html">Temple Inn & Suites Mock website</a></li>
-      <li><a href="cit230/assignments/weathersite/index.html">Weather Mock website</a></li>
-      <li><a href="wdd330/todo/index.html">To Do List web app</a></li>
-      <li><a href="wdd330/costumeapp/index.html">Costume Inventory web app</a></li>
-      <li><a href="wdd331/zen-garden/index.html">Zen Garden</a></li>
-      <li><a href="index2.html">Coursework Notes</a></li>
 
-    </ul>
-  </main>
-  <footer>
-    <p>&copy;2025 - Jennifer C. Thomas - Aspie Designs</p>
-  </footer>
+  <section class="hero">
+    <div class="container">
+      <h1>Developer & Problem Solver</h1>
+      <p>Building web applications with modern technologies</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- Featured Project -->
+      <div class="featured-project">
+        <span class="featured-badge">⭐ Featured Project</span>
+        <div class="featured-content">
+          <div>
+            <h3 class="project-title">Neon Space Arcade</h3>
+            <p class="project-description">I used this project to better learn how to integrate the use of AI in website
+              development.
+              It combines my own coding knowledge with the help of some tutorials for the games. AI was used for the
+              general feel of the website and to help resolve some coding errors.
+              Overall it was a great learning experience and helped me understand some of the shortcomings of AI in web
+              development and the importance of still having human involvement.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">Claude.ai</span>
+            </div>
+            <div class="project-links">
+              <a href="tech-moms/index.html" class="project-link">🔗 Live Demo</a>
+              <a href="https://github.com/fairlite2u/neon-space-arcade" class="project-link">📁 GitHub</a>
+            </div>
+          </div>
+          <div class="featured-image">🕹️</div>
+        </div>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            🏩
+            <div class="project-overlay">
+              <div class="overlay-buttons">
+                <a href="cit230/templeinn/index.html" class="overlay-btn">Live Demo</a>
+                <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/cit230/templeinn"
+                  class="overlay-btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Temple Inn & Suites Mock Website</h3>
+            <p class="project-description">The final project for my Web Frontend Development course.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">HTML</span>
+            </div>
+            <div class="project-links">
+              <a href="cit230/templeinn/index.html" class="project-link">🔗 View Live</a>
+              <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/cit230/templeinn"
+                class="project-link">📁 Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            🌤️
+            <div class="project-overlay">
+              <div class="overlay-buttons">
+                <a href="cit230/assignments/weathersite/index.html" class="overlay-btn">Live Demo</a>
+                <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/cit230/assignments/weathersite"
+                  class="overlay-btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Weather Forecast App</h3>
+            <p class="project-description">A clean, responsive weather application with location-based forecasts.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">Weather API</span>
+            </div>
+            <div class="project-links">
+              <a href="cit230/assignments/weathersite/index.html" class="project-link">🔗 View Live</a>
+              <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/cit230/assignments/weathersite"
+                class="project-link">📁 Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            🥸
+            <div class="project-overlay">
+              <div class="overlay-buttons">
+                <a href="wdd330/costumeapp/index.html" class="overlay-btn">Live Demo</a>
+                <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/wdd330/costumeapp"
+                  class="overlay-btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Costume Inventory Management Web App</h3>
+            <p class="project-description">A single page application that allows a user to keep an inventory of costumes
+              that can be sorted by gender, size, and character.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">MVC</span>
+            </div>
+            <div class="project-links">
+              <a href="wdd330/costumeapp/index.html" class="project-link">🔗 View Live</a>
+              <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/wdd330/costumeapp"
+                class="project-link">📁 Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            📝
+            <div class="project-overlay">
+              <div class="overlay-buttons">
+                <a href="wdd331/zen-garden/index.html" class="overlay-btn">Live Demo</a>
+                <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/wdd331/zen-garden"
+                  class="overlay-btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Zen Garden</h3>
+            <p class="project-description">A team project to create our own take on the CSS Zen Garden challenge.</p>
+            <div class="project-tech">
+              <span class="tech-tag">CSS3</span>
+            </div>
+            <div class="project-links">
+              <a href="wdd331/zen-garden/index.html" class="project-link">🔗 View Live</a>
+              <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/wdd331/zen-garden"
+                class="project-link">📁 Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            ✅
+            <div class="project-overlay">
+              <div class="overlay-buttons">
+                <a href="wdd330/todo/index.html" class="overlay-btn">Live Demo</a>
+                <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/wdd330/todo"
+                  class="overlay-btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">To Do List Web App</h3>
+            <p class="project-description">A single page application that allows the user to create a to do list by
+              adding items and checking off and deleting items.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">HTML</span>
+            </div>
+            <div class="project-links">
+              <a href="wdd330/todo/index.html" class="project-link">🔗 View Live</a>
+              <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/wdd330/todo"
+                class="project-link">📁 Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            📙
+            <div class="project-overlay">
+              <div class="overlay-buttons">
+                <a href="wdd330/tutorials/booklistapp/index.html" class="overlay-btn">Live Demo</a>
+                <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/wdd330/tutorials/booklistapp"
+                  class="overlay-btn">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Book Inventory Web App</h3>
+            <p class="project-description">A single page application for keeping an inventory of books.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">HTML</span>
+            </div>
+            <div class="project-links">
+              <a href="wdd330/tutorials/booklistapp/index.html" class="project-link">🔗 View Live</a>
+              <a href="https://github.com/fairlite2u/fairlite2u.github.io/tree/master/wdd330/tutorials/booklistapp"
+                class="project-link">📁 Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-project">
+        <div class="featured-content">
+          <div>
+            <h3 class="project-title">School Portfolio</h3>
+            <p class="project-description">My school portfolio contains many of the projects above, along with some
+              class notes and small projects.</p>
+            <div class="project-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">HTML</span>
+            </div>
+            <div class="project-links">
+              <a href="index2.html" class="project-link">🔗 Live Demo</a>
+              <a href="https://github.com/fairlite2u/fairlite2u.github.io" class="project-link">📁 GitHub</a>
+            </div>
+          </div>
+          <div class="featured-image">🗃️</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="skills-grid">
+        <div class="skill-item">
+          <h4>Frontend</h4>
+          <p>JavaScript, HTML5, CSS3, React, jQuery</p>
+        </div>
+        <div class="skill-item">
+          <h4>Backend</h4>
+          <p>Python, PHP, Java, Node.js, .NET, REST APIs</p>
+        </div>
+        <div class="skill-item">
+          <h4>Database</h4>
+          <p>MongoDB, MySQL, Firebase</p>
+        </div>
+        <div class="skill-item">
+          <h4>Tools</h4>
+          <p>Git, VS Code, Figma, Postman, Adobe Creative Cloud</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Let's Build Something Together</h2>
+      <p>Interested in working together? I'd love to hear about your project.</p>
+      <div class="contact-links">
+        <a href="mailto:jenate@gmail.com" class="contact-link">
+          📧 Email Me
+        </a>
+        <a href="https://www.linkedin.com/in/jennifer-t-4110478/" class="contact-link">
+          💼 LinkedIn
+        </a>
+        <a href="https://github.com/fairlite2u" class="contact-link">
+          🐙 GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
