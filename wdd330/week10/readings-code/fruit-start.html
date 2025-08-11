@@ -1,0 +1,71 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+      <meta charset="utf-8">
+      <title>Favorite fruit start</title>
+      <style>
+          div.example {
+              margin-bottom: 50px;
+          }
+
+          input:invalid {
+              border: 2px dashed red;
+          }
+
+          input:invalid:required {
+              background-image: linear-gradient(to right, pink, lightgreen);
+          }
+
+          input:valid {
+              border: 2px solid black;
+          }
+      </style>
+  </head>
+
+  <body>
+      <div>
+          <h1>HTML5 Form Validation Examples</h1>
+          <div class='example'>
+              <h2>The <code>required</code> attribute</h2>
+              <form>
+                  <label for="choose1">Would you prefer a banana or a cherry? (required)</label>
+                  <input id="choose1" name="i_like" required>
+                  <button>Submit</button>
+              </form>
+          </div>
+          <div class='example'>
+              <h2>Validating against a regular expression with the <code>pattern</code> attribute</h2>
+              <form>
+                  <label for="choose2">Would you prefer a banana or a cherry? (required)</label>
+                  <input id="choose2" name="i_like" required pattern="[Bb]anana|[Cc]herry">
+                  <button>Submit</button>
+                  <p>Note: Only "banana", "Banana", "cherry", and "Cherry" are valid answers (without the quotation
+                      marks)
+                  </p>
+              </form>
+          </div>
+          <div class='example'>
+              <h2>Constraining the length and values of your entries using <code>minlength</code> &
+                  <code>maxlength</code>
+                  and <code>min</code> & <code>max</code></h2>
+              <div>
+                  <form>
+                      <label for="choose3">Would you prefer a banana or a cherry?</label>
+                      <input type="text" id="choose3" name="i_like" required minlength="6" maxlength="6">
+                      <button>Submit</button>
+                  </form>
+              </div><br>
+              <div>
+                  <form>
+                      <label for="number">How many would you like?</label>
+                      <input type="number" id="number" name="amount" value="1" min="1" max="10">
+                      <button>Submit</button>
+                      Max allowed is 10
+                  </form>
+              </div>
+          </div>
+          </div>
+  </body>
+
+  </html>

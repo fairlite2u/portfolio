@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 2 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Week 2 Notes</h2><br>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 2:</strong> Programming Basics</h3><hr>
+        <h3>Variables</h3>
+        <ul>
+            <li>ES6 onward uses <strong>const</strong> and <strong>let</strong> over <strong>var</strong></li>
+            <li><strong>const</strong> is used when the variable will not be reassigned to another value</li>
+            <li><strong>let</strong> is used if the variable might be reassigned</li>
+            <li><strong>const</strong> should be used to declare most variables</li>
+            <li>Using <strong>const</strong> does not prevent non-primitive data types from being mutated</li>
+        </ul>
+        <h3>Scope</h3>
+        <ul>
+            <li>Using <strong>const</strong> and <strong>let</strong> means they are block scoped (or local scope), so their value only exists inside the block they are declared in</li>
+            <li>A variable declared outside a block has global scope, which is not good practice as they are accessible anywhere in program. Keep those to a minimum</li>
+        </ul>
+        <h3>Template Literals</h3>
+        <ul>
+            <li>Use the backtick character (`) to deliminate strings</li>
+            <li>Provides the advantage of being able to use both types of quote marks within a string: `She said, "It's Me!"`</li>
+            <li>Also allows interpolation which means that a JavaScript expression can be inserted inside a string and the result will be displayed</li>
+        </ul><br>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 3:</strong> Arrays, Logic, and Loops</h3><hr>
+        <h3>Arrays</h3>
+        <ul>
+            <li>An ordered list of values</li>
+            <li>Preferred method of creating an array is using the array literal notation: const myArray = [];</li>
+            <li>Be careful when using the <strong>delete</strong> operator to delete items from an array because it replaces the value with 'undefined'</li>
+            <li>Understand what methods are non-destructive or destructive to arrays and how they can be permanently changed</li>   
+        </ul>
+        <h3>Sets</h3>
+        <ul>
+            <li>A data structure that represents a collection of unique values</li>
+            <li>Currently no literal notation - create with the new operator: const list = new Set();</li>
+            <li>If set already contains a value and you try to add that same value, it will be ignored</li>
+        </ul>
+        <h3>Maps</h3>
+        <ul>
+            <li>A convenient way of keeping a list of key and value pairs</li>
+            <li>Currently no literal notation - create with the new operator: const romanNumerals = new Map();</li>
+        </ul><br>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 4:</strong> Functions</h3><hr>
+        <h3>Functions</h3>
+        <ul>
+            <li>You can define a function a few different ways - function declarations, function expressions, Function() constructor (not recommended)</li>
+            <li>Be consisten with whatever method you use</li>
+            <li>Arrow functions are much more succinct but are best for short, one line, functions</li>
+        </ul>
+        <h3>Callbacks</h3>
+        <ul>
+            <li>A function that is passed as an argument to another function</li>
+            <li>Helps with separating functions out so that the same code isn't repeated in multiple functions</li>
+        </ul>
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

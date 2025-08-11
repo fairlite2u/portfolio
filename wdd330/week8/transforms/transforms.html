@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | CS3S Transforms Examples</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>CSS3 Transforms</h1>
+    <div id="boxes">
+        <div class="examples">
+            <h2>The translate() Method</h2>
+            <p>The <code>translate()</code> method moves an element from its current position:</p>
+            <div id="preTranslate" class="box">
+                This div element sits in its original position
+            </div>
+            <div id="postTranslate" class="box">
+                Moved 50 pixels to the right, and 100 pixels down
+            </div>
+        </div>
+        <div class="examples">
+            <h2>The rotate() Method</h2>
+            <p>The <code>rotate()</code> method rotates an element clockwise or counter-clockwise.</p>
+            <div id="preRotate" class="box">
+                This a normal div element.
+            </div>
+            <div id="postCWRotate" class="box">
+                Rotated clockwise 20 degrees.
+            </div>
+            <div id="postCCWRotate" class="box">
+                Rotated counter-clockwise with 20 degrees.
+            </div>
+        </div>
+        <div class="examples">
+            <h2>The scale() Method</h2>
+            <p>The <code>scale()</code> method increases or decreases the size of an element.</p>
+            <div id="preScale" class="box">
+                This a normal div element.
+            </div>
+            <div id="postScaleLrg" class="box">
+                Scaled 2x its original width, and 3x its original height.
+            </div>
+            <div id="postScaleSml" class="box">
+                Decreased to be half of its original width and height.
+            </div>
+        </div>
+        <div class="examples">
+            <h2>The skew() Method</h2>
+            <p>The <code>skew()</code> method skews an element along the X and Y-axis by the given angles.</p>
+            <div id="preSkew" class="box">
+                This a normal div element.
+            </div>
+            <div id="postXSkew" class="box">
+                Skewed 20 degrees along the X-axis.
+            </div>
+            <div id="postYSkew" class="box">
+                Skewed 10 degrees along the Y-axis.
+            </div>
+            <div id="postSkew" class="box">
+                Skewed 20 degrees along the X-axis, and 10 degrees along the Y-axis.
+            </div>
+        </div>
+        <div class="examples">
+            <h2>The matrix() Method</h2>
+            <p>The <code>matrix()</code> method combines all the 2D transform methods into one.The parameters are as follows: </p>
+            <p id="parameters1">matrix(scaleX(),skewY(),skewX(),scaleY(),</p>
+            <p id="parameters2">↵translateX(),translateY())</p>
+            <div id="preMatrix" class="box">
+                This a normal div element.
+            </div>
+            <div id="postMatrix1" class="box">
+                Using the matrix() method.
+            </div>
+            <div id="postMatrix2" class="box">
+                Another use of the matrix() method.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

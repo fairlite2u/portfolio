@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 4 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Week 4 Notes</h2><br>
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 8:</strong> Forms</h3>
+        <hr>
+        <h3>Forms</h3>
+        <ul>
+            <li>Made up of a <code><strong>&lt;form&gt;</strong></code> element that contains form controls such as input fields, select menus, and buttons.</li>
+            <li>Traditionally processed on the backend, now commonly processed on the front end using JavaScript</li>
+            <li><code><strong>form.submit()</strong></code> submits the form automatically.</li>
+            <li><code><strong>form.reset()</strong></code> will reset all the form controls back to their initial values. 
+                A button with a type attribute of reset can also be used to do this.
+                Be cautious when using rest buttons.</li>
+            <li><code><strong>form.action</strong></code> sets the action attribute of a form so it is sent to a a different URL to be processed on the server.</li>
+            <li>Focus and blur can be used to remove and add default text to the text field - similar to the placeholder attribute.</li>
+            <li>Common form controls are input, select, textarea, and button.</li>
+        </ul>
+        <h3>Form Validation</h3>
+        <ul>
+            <li>The process of checking whether a user has entered the information into a form correctly.</li>
+            <li>Can occur on the client side using JavaScript and on the server side. Advisable to use both.</li>
+        </ul><br>
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 12:</strong> Object-Oriented Programming in JavaScript</h3>
+        <hr>
+        <h3>Object-Oriented Programming</h3>
+        <ul>
+            <li>Often used to model representations of objects in the real world.</li>
+            <li>There are three main concepts in OOP: polymorphism, and inheritance.</li>
+            <li><ul>
+                <li>Encapsulation - keeping all the programming logic inside an object and making methods available to implement the functionality, without the outside world needing to know how it's done.</li>
+                <li>Polymorphism - various objects can share the same method, but also have the ability to override shared methods with a more specific implementation.</li>
+                <li>Inheritance - we can take an object that already exists and inherit all its properties and methods. We can then improve on its functionality by adding new properties and methods.</li>
+            </ul></li>
+        </ul>
+        <h3>Constructor Functions</h3>
+        <ul>
+            <li>A function that defines the properties and methods of an object.</li>
+            <li>The keyword <code><strong>this</strong></code> is used to represent the object that will be returned by the constructor function.</li>
+            <li></li>
+        </ul>
+        <h3>Class Declarations</h3>
+        <ul>
+            <li>Similar to writing a class in a class-based programming language that does exactly the same thing as a constructor function.</li>
+            <li>Class declarations are preferable to the constructor function because they are more succinct, easier to read, and all code in a class definition is implictly in strict mode.</li>
+        </ul>
+        <h3>Prototypal Inheritance</h3>
+        <ul>
+            <li>A prototypal inheritance modes means that every class has a prototype proerty that is shared by every instance of the class.</li>
+            <li>The <code><strong>prototype</strong></code> property can be used to add extra methods and properties to a class after its declaration.</li>
+            <li>The <code><strong>prototype</strong></code> object is live, so if a new property or method is added to the prototype, any instances of its class will inherit the new properties and methods automatically.</li>
+        </ul>
+        <h3>Mixins</h3>
+        <ul>
+            <li>A way of adding properties and methods of some objects to another object without using inheritance.</li>
+            <li>The basic mixin functionality uses the <code><strong>Object.assign()</strong></code> method, but since only a shallow copy is made, it can create issues.</li>
+            <li>A better way to use mixins is to create a <code><strong>mixin()</strong></code> function that will assign all properties of an object to another object as a deep copy.</li>
+            <li>Mixins can also be used to create a <code><strong>copy()</strong></code> method to make an exact, deep copy of an object.</li>
+        </ul>
+        <h3>Binding <code><strong>this</strong></code></h3>
+        <ul>
+            <li>The value of <code><strong>this</strong></code> is not retained inside nested functions. To work around the problem, use <code><strong>that = this</strong></code>, <code><strong>bind(this)</strong></code>, <code><strong>for-of</strong></code> instead of <code><strong>forEach()</strong></code>, or arrow functions.</li>
+        </ul>
+        <h3>Composition Over Inheritance</h3>
+        <ul>
+            <li>A design problem that seeks to solve the issues of "Gorilla Banana".</li>
+            <li>Advocates creating small objects that describe single tasks or behaviors and using them as the building blocks for more complex objects.</li>
+            <li>Easier to test and maintain and can be combined together using a mixin function to create more complex objects.</li>
+        </ul><br>     
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 15:</strong> Modern JavaScript Development</h3>
+        <hr>
+        <h3>Modular JavaScript</h3>
+        <ul>
+            <li>A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules.</li>
+            <li>The code in a module should have a single purpose, and group together functions with disctinct functionality.</li>
+            <li>Keeping code modular helps to make it more loosely coupled and interchangeable.</li>
+            <li>All code in modules is always in strict mode without the need for 'use strict' and there is no way to opt out of this.</li>
+            <li>A module has its own global scope, so any variables created in the top-level of a module can only be accessed within that module.</li>
+            <li>The value of <code><strong>this</strong></code> in the top level of a module is <code><strong>undefined</strong></code>, rather than the global object.</li>
+            <li>The keyword <code><strong>export</strong></code> is used to specify any values or functions that are to be made available from the module.</li>
+            <li>The keyword <code><strong>import</strong></code> is then used to import those values or functions inside another js file.</li>
+            <li>Use the the wildcard symbol * with a namespace to import a large amount of values and/or functions.</li>
+        </ul>
+
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

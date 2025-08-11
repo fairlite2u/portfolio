@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div id="error"></div>
+    <form id="form" action="index.html" method="GET">
+        <div>
+            <label>Name <input id="name" name="name" type="text" required></label>
+        </div>
+        <div>
+            <label>Password <input id="password1" name="password1" type="password"></label>
+        </div>
+        <div>
+            <label>Re-enter Password <input id="password2" name="password2" type="password"></label>
+        </div>
+        <button type="submit" id="submit">Submit</button>
+        <p>
+            The button types "button" and "submit" are not the same. 
+            Using type="button" simply creates a clickable button. 
+            It does not need to be inside a form element and does not have a default behavior.
+            Using type="submit" creates a clickable button that submits the form data.  
+        </p>
+    </form>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>

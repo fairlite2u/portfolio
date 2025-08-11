@@ -1,0 +1,161 @@
+@media only screen and (min-width: 32.5em) {
+
+    /*****header*****/
+    header {
+        width: 100%;
+        margin: 25px auto 100px;
+        height: 100px;
+
+    }
+
+    h1 {
+        padding-top: 12px;
+    }
+
+    .logohead {
+        width: 150px;
+        margin-left: 5px;
+        margin-top: -25px;
+        margin-right: 20px;
+    }
+
+    /*****navigation******/
+    .navigation li:first-child {
+        display: none;
+    }
+
+    .navigation li {
+        display: inline-block;
+        margin-right: .75rem;
+        list-style-type: none;
+    }
+
+    /*****Main*****/
+    #featuretitle {
+        font-size: 2.3em;
+        flex-flow: nowrap;
+    }
+
+    #featurehead {
+        font-size: 3rem;
+    }
+
+    .featureimg {
+        margin: 5px;
+    }
+
+    .featrightcol {
+        font-size: 1em;
+    }
+
+    .pictures {
+        background-color: #223f64;
+        padding: 20px 0 10px;
+        border: 2px solid #8fabc7;
+    }
+
+    .slideshow-container {
+        max-width: 600px;
+        border: 2px solid #223f64;
+    }
+
+    .text {
+        width: 96%;
+    }
+
+    .templename {
+        font-size: 2.2em;
+        text-align: center;
+    }
+
+    .templegallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /*****Reservations*****/
+    #bookflex {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .userinput {
+        flex: 1 1 auto;
+        display: block;
+        margin-top: -4px;
+    }
+
+    /*****Services*****/
+    .picleftcol,
+    .picrightcol {
+        width: 38%;
+        flex: 1 0 15em;
+        margin: .5em;
+    }
+    p.servicessub {
+        text-align: center;
+    }
+    .textleftcol,
+    .textrightcol {
+        width: 58%;
+        flex: 2 0 15em;
+    }
+
+    .picrightcol {
+        margin-right: 16px;
+    }
+
+    #specialimg,
+    #amenitiesimg, #receptionimg, #weddingimg {
+        padding: 5px;
+
+    }
+    .subpic {
+        width: 400px;
+        margin: 0 auto;
+    }
+    #amenitieslist, #foodlist {
+        padding: 0 20%;
+    }
+    .missionpage {
+        border: 2px solid #223f64;
+        padding: 10px;
+    }
+    #longterm, #longterm h2, .smallcenter {
+        text-align: left;
+    }
+    #longterm h2 {
+        font-size: 2.8rem;
+        padding: 0 16px;
+    }
+    #longterm p {
+        padding: 0 16px;
+    }
+    .roomslideshow-container .text {
+        width: 94%;
+    }
+
+    /*****Contact*****/
+    .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .column {
+        width: 48%;
+        flex: 1 0 15em;
+        margin: 1.5em;
+    }
+
+    .leftcol,
+    .rightcol {
+        width: 48%;
+        flex: 1 0 15em;
+        margin: 1.5em;
+    }
+
+    /*****Footer*****/
+    footer {
+        margin: 20px auto;
+        font-size: 1em;
+    }
+}

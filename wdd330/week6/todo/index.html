@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1 class="app-title">To Do List</h1>
+            <table>
+                <!-- <thead>
+                </thead> -->
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" id="listInfo"></td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- <ul class="todo-list js-todo-list">
+                <li id="task"></li>
+            </ul> -->
+            <form class="js-form">
+                <input type="text" placeholder="New Task" id="newTask" name="newTask" class="js-todo-input">
+                <input type="button" id="add" value="Add" onclick="addTask()">
+            </form>
+        </div>
+    </main>
+  
+    <script src="main.js" type="module"></script>
+
+</body>
+
+</html>

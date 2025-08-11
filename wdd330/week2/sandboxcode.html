@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapters 2-4 | Eloquent JavaScript Sandbox</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Eloquent JavaScript Sandbox Exercises</h2>
+        <h3>Chapter 2</h3>
+        <h4>Looping A Triangle</h4>
+        <p>Write a loop that makes seven calls to console.log to output the following triangle:</p>
+        <p>#</p>
+        <p>##</p>
+        <p>###</p>
+        <p>####</p>
+        <p>#####</p>
+        <p>######</p>
+        <p>#######</p>
+        <pre><code>
+            for (let output = "#"; output.length < 8; output += "#"){
+                console.log(output);
+            }
+        </code></pre>
+
+        <h4>FizzBuzz</h4>
+        <p>Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For number
+            divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5(and not by 3), print
+            "Buzz" instead.</p>
+        <pre><code>
+            for(let i=1; i <=100; i++){
+                if (i%3 === 0){
+                    console.log("Fizz");
+                } else if (i%5 === 0){
+                    console.log("Buzz");
+                } else {
+                    console.log(i);
+                }
+            }
+        </code></pre>
+        <p>Then modify your program to print "FizzBuzz" for numbers that are divisible by both 3 and 5.</p>
+        <pre><code> 
+            for(let i=1; i <=100; i++){
+                let line = "";
+                if (i%3 == 0){
+                    line += "Fizz";
+                } 
+                if (i%5 == 0){
+                    line += "Buzz";
+                } 
+                console.log(line || i);
+            }
+        </code></pre>
+
+        <h4>Chessboard</h4>
+        <p>Write a program that creates a string that represents an 8x8 grid, using newline characters to separate
+            lines. At each position of the grid there is either a space or a "#" character. The characters should form a
+            chessboard.</p>
+        <pre><code>
+            let board = "";
+            for (let x = 1; x<=8; x++){
+                for(let y = 1; y <=8; y++){
+                    if ((x+y)%2 == 0){
+                        board+= " ";
+                    } else {
+                        board += "#";
+                    }
+                }
+                board += "\n";
+            }
+            console.log(board);
+        </code></pre>
+        <p>Modify the program to define a binding size = 8 and change the program so that it works for any size, outputting a grid of the given width and height.</p>
+        <pre><code>
+            let board = "";
+            let size = 8;
+            for (let x = 1; x<=size; x++){
+                for(let y = 1; y <=size; y++){
+                    if ((x+y)%2 == 0){
+                        board+= " ";
+                    } else {
+                        board += "#";
+                    }
+                }
+                board += "\n";
+            }
+            console.log(board);
+        </code></pre>
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

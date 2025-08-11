@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #222;
+        }
+
+        #o1,
+        #o2,
+        #b1,
+        #b2 {
+            position: fixed;
+            width: 30px;
+        }
+
+        #o1,
+        #b1 {
+            height: 100px;
+            transform: rotate(45deg);
+        }
+
+        #o2,
+        #b2 {
+            height: 51px;
+            transform: rotate(-45deg);
+        }
+
+        #o1,
+        #o2 {
+            background: #f2994a;
+        }
+
+        #b1,
+        #b2 {
+            background: #2d9cdb;
+        }
+
+        #o1 {
+            border-radius: 0 0 0 10px;
+            left: 155px;
+            top: 58px;
+        }
+
+        #b1 {
+            border-radius: 0 10px 0 0;
+            left: 213px;
+            top: 141px;
+        }
+
+        #o2 {
+            border-radius: 0 0 5px;
+            left: 158px;
+            top: 135px
+        }
+
+        #b2 {
+            border-radius: 5px 0;
+            left: 210px;
+            top: 114px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="o1"></div>
+    <div id="o2"></div>
+    <div id="b1"></div>
+    <div id="b2"></div>
+</body>
+
+</html>

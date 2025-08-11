@@ -1,0 +1,220 @@
+/* main css custom file */
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 1em;
+    background-color: #f5f5f5;
+    color: #0b4871;
+    font-family: 'Raleway', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fjalla One', sans-serif;
+}
+header, nav, footer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/******Header******/
+header {
+	margin: 10px auto;
+    background-color: #0b4871;
+    color: #f5f5f5;
+    border: 1px solid #07304b;
+    box-shadow: 0 0 30px #ffda6a;
+    text-align: center;
+}
+h1 {
+    font-size: 2.4em;
+}
+header img {
+    width: 75px;
+    height: auto;
+}
+.logo, .headings {
+    font-size:  .70em;
+    margin: 15px;
+}
+/******Navigation******/
+nav {
+    background-color: #a3e1f8;
+    text-align: center;
+}
+.navigation {
+    list-style-type: none;
+}
+nav a {
+    padding: .5rem;
+    display: block;
+    color: #0b4871;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navigation li:first-child {
+    display: block;
+}
+.navigation li {
+    display: none;
+}
+.active {
+    background: #0e6096;
+    color: #f5f5f5; 
+}
+nav a:hover {
+    background: #fff3cd;
+    color: #07304b;
+}
+.responsive li {
+    display: block;
+}
+/*****Main Content*****/
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+/*****Top Image and Weather Summary*****/
+h2 {
+    font-size: 2rem;
+    text-shadow: 3px 3px 5px #0e6096;
+    padding: 1.5rem;
+    text-align: center;
+}
+.hero {
+    margin: 5px auto;
+    position: relative;
+    color: #f5f5f5;
+}
+.summary {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background:#0b4871;
+    border: 1px solid #07304b;
+    padding: .7rem;
+    box-shadow: 0 0 30px #ffd3cd;
+    opacity: .8;
+    line-height: 1.4rem;
+}
+.summary h3 {
+    padding-bottom: 5px;
+    text-decoration: underline;
+    text-align: center;
+}
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.label {
+    text-align: right;
+}
+.hero img {
+    width: 100%;
+    height: auto;
+}
+/*****Forecast*****/
+.forecast {
+    display: none;
+}
+#forecast-header {
+    text-align: center;
+}
+.forecast-block {
+    display: flex;
+    flex-direction: row;
+    max-width: 450px;
+    margin: auto;
+}
+.day1, .day2, .day3, .day4, .day5, .day6 {
+    flex: 1 1 100%;
+    border-top: 1px solid #07304b;
+    border-bottom: 1px solid #07304b;
+    border-left: 1px solid #07304b;
+    background-color: #a3e1f8;
+    font-size: 16px;
+    text-align: center;
+} 
+.forecast-block div:last-child {
+    border-right: 1px solid #07304b;
+}
+.days {
+    display: block;
+    padding: 5px;
+    font-weight: 700;
+    font-size: larger;
+    border-bottom: 1px solid #07304b;
+    background-color: #fff3cd;
+}   
+.forecast-block div img {
+    border-radius: 100px;
+    padding: 5px;
+}    
+.icon {
+    width: 75px;
+}    
+.data {
+    display: block;
+    padding: 0 5px 5px;
+}
+/*****Article*****/
+.acc {
+    padding: 5px;
+}
+.main-article {
+    margin: 20px auto 10px;
+    padding: 10px;
+    background-color: #fff3cd;
+    border: 1px solid #ffda6a;
+    line-height: 1.25rem;
+}
+.articleimg {
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+/*****Contact*****/
+.contact {
+    max-width: 880px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #a3e1f8;
+}
+.icons {
+    width: 50px;
+    padding: 10px;
+}
+.social-media a {
+    text-decoration: none;
+}
+.map {
+    width: 100%;
+}
+/*****Footer*****/
+footer {
+    max-width: 900px;
+    margin: 10px auto;
+    background-color: #0b4871;
+    color: #f5f5f5;
+    border: 1px solid #07304b;
+    box-shadow: 0 0 30px #ffda6a;
+    text-align: center;
+    font-size: .7em;
+} 
+/*****Gallery*****/
+.imagegallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+    padding: 10px;
+    grid-auto-rows: 300px;
+}
+.imagegallery img {
+    width: 100%;
+    height: auto;
+}
+figure {
+    padding: 20px;
+}

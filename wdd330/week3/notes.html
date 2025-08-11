@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 3 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Week 3 Notes</h2><br>
+
+        <h3><strong><cite>Object methods, "this"</cite></strong></h3>
+        <hr>
+        <h3>"this" in methods</h3>
+        <ul>
+            <li>It's common that an object method needs to access the info stored in the object, for example, the code
+                inside user.sayHi() may need the name of the user. That's when the <code>this</code> keyword comes
+                into play.</li>
+            <li>The value of <code>this</code> is the object "before dot", the one used to call the method.</li>
+        </ul>
+        <h3>"this" is not bound</h3>
+        <ul>
+            <li>In JavaScript, <code>this</code> can be used in any function, even if it's not a method of an
+                object.</li>
+            <li>The value of <code>this</code> is evaluated during run-time, depending on the context.</li>
+            <li>The rule is simple: if <code>object.method()</code> is called, then <code>this</code> is
+                <code>object</code> during the call of <code>method</code>.</li>
+        </ul>
+        <h3>Arrow functions have no "this"</h3>
+        <ul>
+            <li>If we reference <code>this</code> from an arrow function, it is taken from the outer "normal"
+                function.</li>
+            <li>Provides the advantage of being able to use both types of quote marks within a string: `She said, "It's
+                Me!"`</li>
+        </ul><br>
+
+        <h3><strong><cite>This in JavaScript</cite></strong></h3>
+        <hr>
+        <h3>So, what is this?</h3>
+        <ul>
+            <li><code>this</code> is a keyword whose value changes depending on how a functions gets called.</li>
+            <li>Preferred method of creating an array is using the array literal notation: const myArray = [];</li>
+            <li>There are six different ways where <code>this</code> can take on new values:</li>
+            <li><ol>
+                <li><code>this</code> in global context: not usually used</li>
+                <li><code>this</code> in object construction: <code>this</code> refers to the object instance
+                </li>
+                <li><code>this</code> in an object method: <code>this</code> refers to the object, use methods
+                    to get the instance of an object</li>
+                <li><code>this</code> in a simple function: <code>this</code> is always set to
+                    <code>Window</code></li>
+                <li><code>this</code> in an arrow function: <code>this</code> is always the same as
+                    <code>this</code> around it (in it's immediate scope).</li>
+                <li><code>this</code> in an event listener: <code>this</code> is set to the element that fired
+                    the event.</li>
+            </ol></li>
+        </ul>
+        <h3>Changing this with bind</h3>
+        <ul>
+            <li><code>bind</code> is a method that is present in every function.</li>
+            <li><code>bind</code> allows you to change the <code>this</code> context.</li>
+            <li>This method takes in any number of arguments and returns the bound function.</li>
+            <li>The first parameter you pass into <code>bind</code> becomes <code>this</code> in the bound
+                function.</li>
+            <li>The other parameters you pass will be passed as arguments to the original function.</li>
+            <li>Note: <code>bind</code> doesn't work with arrow functions.</li>
+        </ul><br>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 5:</strong> Objects</h3>
+        <hr>
+        <h3>Object Literals</h3>
+        <ul>
+            <li>A self contained set of related values & functions.</li>
+            <li>If a property's value is a function, it is known as a method.</li>
+            <li>Think of it as like a dictionary where you look up a property name and see a value.</li>
+            <li>Each property is a key-value pair.</li>
+        </ul>
+        <h3>Built-in Objects</h3>
+        <ul>
+            <li>JSON - a string representation of the object literal notation.</li>
+            <li><ul>
+                <li>Differences:</li>
+                <li><ol>
+                    <li>Property names must be double-quoted.</li>
+                    <li>Permitted values are double-quoted strings, numbers, true, false, null, arrays, and objects.
+                    </li>
+                    <li>Functions are not permitted values.</li>
+                </ol></li>
+            </ul></li>
+            <li>Math Object - all the properties and methods of the math object are immutable and unable to be changed.
+            </li>
+            <li>Date Object - contains information about dates & times.</li>
+            <li>The RegExp Object</li>
+        </ul><br>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 6:</strong> The Document Object Model</h3>
+        <hr>
+        <h3>What is the DOM?</h3>
+        <ul>
+            <li>The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that form a tree-like structure.</li>
+            <li>The DOM treats everything on a web page as a node.</li>
+            <li>The HTML tag is the root node and every other part is a child node.</li>
+            <li>The DOM is not actually part of the JavaScript because it is language agnostic. This means it can be used in any programming language.</li>
+        </ul>
+        <h3>Getting Elements</h3>
+        <ul>
+            <li>The DOM provides several methods that allow us to access any element on a page:</li>
+            <li><ul>
+                <li>getElementById()</li>
+                <li>getElementsByTagName()</li>
+                <li>getElementsByClassName()</li>
+                <li>Query Selectors</li>
+            </ul></li>
+        </ul><br>
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 7:</strong> Events</h3>
+        <hr>
+        <h3>Event Listeners</h3>
+        <ul>
+            <li>Like setting a notification to alert you when something happens.</li>
+            <li>Avoid using inline event handlers.</li>
+            <li>The current standard is event listeners over event handlers; addEventListener()</li>
+        </ul><br>
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Full-Time Temple Missionaries | Temple Inn & Suites | Temples | Reservations | Services</title>
+    <meta name="description" content="Providing lodging and services related to temple visits around the world">
+    <link href=" https://fonts.googleapis.com/css?family=Lato%7cTangerine:700&display=swap" rel="stylesheet">
+    <link href="css/normalize.min.css" rel="stylesheet">
+    <link href="css/small.min.css" rel="stylesheet">
+    <link href="css/medium.min.css" rel="stylesheet">
+    <link href="css/large.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo50.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logobar">
+            <a href="./">
+                <img class="logohead" src="images/logo.png" alt="Temple Inn & Suites Logo">
+            </a>
+        </div>
+        <div class="navbar">
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#" class="menu" onclick="toggleMenu()">&equiv; Menu</a></li>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="temples.html">Temples</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="contactbox">
+        <h1>Full-Time Temple Missionaries</h1>
+        <div class="missionpage">
+            <div class="row">
+                <div class="column">
+                    <div id="longterm">
+                        <h2 class="smallcenter">Long-term Accommodations</h2>
+                        <p class="smallcenter">We offer Studio Rooms with a Queen-size bed and a kitchenette or 1
+                            Bedroom Suites with a
+                            King-size bed and a full kitchen. Both include basic kitchen cookware and appliances,
+                            dinnerware, glassware, and silverware. Washer/Dryer also included. Discounts vary depending
+                            on length of stay.</p>
+                        <br>
+                        <p class="smallcenter">View pictures of our rooms below:</p>
+                        <br>
+                        <div class="roomslideshow-container">
+                            <div class="mySlides fade">
+                                <div class="numbertext">1 / 3</div>
+                                <picture class="sspic">
+                                    <img src="images/interiorsuite400.jpg" alt="Hotel 1 bedroom suite">
+                                </picture>
+                                <div class="text">1 Bedroom Queen Suite</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">2 / 3</div>
+                                <picture class="sspic">
+                                    <img src="images/roomkitchen400.jpg" alt="Hotel room kitchen">
+                                </picture>
+                                <div class="text">Kitchen in Suite</div>
+                            </div>
+                            <div class="mySlides fade">
+                                <div class="numbertext">3 / 3</div>
+                                <picture class="sspic">
+                                    <img src="images/bathroom400.jpg" alt="Hotel room bathroom">
+                                </picture>
+                                <div class="text">Large Bathroom</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="column contactform">
+                    <h2>Contact us to learn more about our long-term stay packages!</h2>
+                    <form method="GET" action="thanks.html" name="contact">
+                        <label for="contactname">Name</label>
+                        <input id="contactname" type="text" name="name">
+                        <label for="contactemail">Email</label>
+                        <input id="contactemail" type="text" name="email">
+                        <label for="contactsubject">Subject</label>
+                        <input id="contactsubject" type="text" name="subject">
+                        <label for="contactmessage">Message</label>
+                        <textarea id="contactmessage" name="message"></textarea>
+                        <div id="conbutton">
+                            <input class="contactbutton" type="submit" value="Send Message">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;2019 Temple Inn & Suites | <a class="sources" href="sources.html">Attributions</a> | Designed by Aspie
+            Design<br>
+            <span id="currentdate">
+            </span>
+        </p>
+    </footer>
+    <script src="js/hamburger.js"></script>
+    <script src="js/slides.js"></script>
+    <script src="js/currentdate.js"></script>
+</body>
+
+</html>

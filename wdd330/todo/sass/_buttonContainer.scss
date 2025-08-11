@@ -1,0 +1,19 @@
+.buttonContainer {
+    // margin-top: 1rem;
+    padding: 0.25rem 0;
+
+    .buttonBar {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            font-size: 1rem;
+            background-color: $clear-button-color;
+            padding: 0 0.1rem;
+            width: 30%;
+            @include mq(768px) {
+                padding: 0 0.5rem;
+            }
+        }
+    }
+}

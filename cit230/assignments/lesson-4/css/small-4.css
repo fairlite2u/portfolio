@@ -1,0 +1,51 @@
+/* main css custom file */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    background-color: #f5f5f5;
+    color: #0b4871;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+header {
+	margin: 10px auto;
+    background-color: #0b4871;
+    color: #f5f5f5;
+    border: 1px solid #07304b;
+    box-shadow: 0 0 30px #ffda62;
+    text-align: center;
+}
+
+.logo, .headings {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 15px;
+}
+nav {
+    background-color: #a3e1f8;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    padding: .5rem;
+    display: block;
+    text-decoration: none;
+}
+
+.active {
+    background: #0e6096;
+    color: #f5f5f5;
+}
+

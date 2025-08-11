@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 10 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Week 10 Notes</h2><br>
+
+        <h3><strong><cite>MDN Web Docs:</cite> Client-Side Form Validation</strong></h3>
+        <hr>
+
+        <h3>What is form validation?</h3>
+        <ul>
+            <li>The browser and/or the web server checking to see that the data entered in the form is in the correct
+                format and
+                within the constraints set by the application.</li>
+            <li>Validation done in the browser is called client-side validation, while validation done on the server is
+                called server-side validation.</li>
+            <li>Why should forms be validated?</li>
+            <li><ul>
+                <li>To get the right data, in the right format.</li>
+                <li>To protect user's data.</li>
+                <li>To protect ourselves.</li>
+            </ul></li>
+        </ul>
+
+        <h3>Using built-in HTML5 form validation</h3>
+        <ul>
+            <li>Most user data can be validated without relying on JavaScript using HTML5 form controls like
+                <code>required</code>, <code>minlength</code> and <code>maxlength</code>, <code>min</code> and
+                <code>max</code>, <code>type</code>, and <code>pattern</code>.</li>
+            <li>If the data follows all the rules specified and validates, the browser will submit the form. If anything
+                is still invalid, the browser will block the form and display an error message.</li>
+            <li>CSS can be used to change styling on form fields that aren't valid with the <code>:invalid</code>
+                pseudo-class.</li>
+        </ul>
+
+        <h3>Validating forms using JavaScript</h3>
+        <ul>
+            <li>Using JavaScript for validation allows you to take control over the look and feel of native error
+                messages and deal with legacy browsers.</li>
+            <li>The Constraint Validation API consists of a set of methods and properties available on some form element
+                DOM interfaces and make it easier to customize error messages.</li>
+            <li>You can also validate form without a built-in API by writing your own JavaScript. In these situations,
+                you should ask yourself a few questions:</li>
+            <li><ul>
+                <li>What kind of validation should I perform?</li>
+                <li>What should I do if the form doesn't validate?</li>
+                <li>How can I help the user to correct invalid data?</li>
+            </ul></li>
+            <li>When it comes to client-side form validation, always remember to think carefully about the user</li>
+            <li><ul>
+                <li>Display explicit error messages.</li>
+                <li>Be permissive about the input format.</li>
+                <li>Point out exactly where the error occurs, expecially on large forms.</li>
+            </ul></li>
+        </ul>
+        <br>
+
+        <h3><strong><cite>MDN Web Docs:</cite> Using Fetch</strong></h3>
+        <hr>
+        <ul>
+            <li>The Fetch API provides a JavaScript interface for accession and manipulation parts of the HTTP pipeline,
+                such as request and responses.</li>
+            <li>The simplest use of <code>fetch()</code> takes one argument &#8212; the path to the resource you want to
+                fetch &#8212; and returns a promise containing the response.</li>
+            <li>Fetch requests are controlled by the <code>connect-src</code> directive of Content Security Policy
+                rather than the directive of the resources it's retrieving.</li>
+            <li>The <code>fetch()</code> method can optionally accept a second parameter, an <code>init</code> object
+                that allows you to control a number of different settings, including: <code>method, headers, body, mode,
+                    credentials</code> and <code>redirect</code>.</li>
+            <li>To cause browsers to send a request with credentials included on both same-origin and cross-origin
+                calls, add <code>credentials: 'include'</code> to the <code>init</code> object.</li>
+            <li>To only send credentials on the same origin, add <code>credentials: 'same-origin'</code>.</li>
+                <li>To not include credentials, use <code>credentials: 'omit'</code>.</li>
+                <li>The <code>Headers</code> interface allows you to create your own headers object via the <code>Headers()</code> constructor.</li>
+                <li><code>Response</code> instances are returned when <code>fetch()</code> promises are resolved.</li>
+                <li>The most common response properties you'll use are: <code>Response.status, Response.statusText,</code> and <code>Response.ok</code>.</li>
+                <li>Bothe request and responses may contain body data. A body is a instance of any of the following types:</li>
+                <li><ul>
+                    <li><code>ArrayBuffer</code></li>
+                    <li><code>ArrayBufferView</code></li>
+                    <li><code>Blob</code>/File</li>
+                    <li>string</li>
+                    <li><code>URLSearchParams</code></li>
+                    <li><code>FormData</code></li>
+                </ul></li>
+                <li>Both request and response will try to intelligently determine the content type.</li>
+                <li>Fetch API support can be detected by checking for the existence of <code>Headers, Request, Response,</code> or <code>fetch()</code> on the <code>Window</code> or <code>Worker</code> scope.</li>
+
+
+        </ul>
+
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

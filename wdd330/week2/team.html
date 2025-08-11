@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team activity Week 2</title>
+</head>
+<script>
+    function userInput(){
+        var n = document.getElementById("input").valueAsNumber
+       
+        var sum = triangleNumbers(n)
+        document.getElementById("output").innerHTML = sum
+    }
+
+    function triangleNumbers(n) {
+        return (n * (n+1))/2
+    }
+
+    function add(n1, n2){
+        return n1 + n2
+
+    }
+    
+    const sub = (n1, n2) => n1 - n2 
+
+    const mul = function (n1, n2) {
+        return n1 * n2
+
+    }
+    const div = function (n1, n2) {
+        return n1 / n2
+
+    }
+
+    function applyOperator(f) {
+        var n1 = document.getElementById("input").valueAsNumber
+        var n2 = document.getElementById("input2").valueAsNumber
+       
+        document.getElementById("output").innerHTML = f(n1,n2)
+    }
+
+</script>
+<body>
+    <main>
+    <input type="number" id="input">
+    <input type="number" id="input2">
+    <button onclick="userInput()">Submit</button>
+    <button onclick="applyOperator(add)">+</button>
+    <button onclick="applyOperator(sub)">-</button>
+    <button onclick="applyOperator(mul)">*</button>
+    <button onclick="applyOperator(div)">/</button>
+    <div id="output"></div>
+    </main><br><br>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    
+</body>
+</html>

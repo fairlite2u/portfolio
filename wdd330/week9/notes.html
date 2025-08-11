@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 9 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Week 9 Notes</h2><br>
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 9:</strong> The Window Object</h3>
+        <hr>
+        <h3>The Browser Object Model</h3>
+        <ul>
+            <li>The Browser Object Model is a collection of properties and methods that contain information about the
+                browser and computer screen.</li>
+            <li>These properties and moethos are made available through the <code><strong>window</strong></code> object.
+            </li>
+            <li>Global variables are created without using the <code>const, let,</code> or <code>var</code> keywords and
+                are actual properties of the global object which means they are also properties of the
+                <code>window</code> object.</li>
+            <li><code>window</code> object functions that produce dialogs: <code>alert(), confirm(), prompt()</code>.
+                These methods should be user with care becuase they stop the executions of a program in its tracks.</li>
+        </ul>
+        <h3>Browser Information</h3>
+        <ul>
+            <li>The <code>window</code> object has a number of properties and methods that provide information about the
+                user's browser including <code>navigator</code> and <code>location</code>. These also have their own
+                properties that provide more information, including:</li>
+            <li><ul>
+                <li><code>window.navigator.userAgent</code> - Returns information about the brower and operating system
+                    being used. This property has been deprecated from the official specification, but remains well
+                    supported in all major browsers.</li>
+                <li><code>window.location.href</code> - Returns the full URL as a string.</li>
+                <li><code>window.location.protocol</code> - Returns a string describing the protocol used.</li>
+                <li><code>window.location.host</code> - Returns a string describing the domain of the current URL and
+                    the port number (which is often omitted if the default port 80 is used).</li>
+                <li><code>window.location.pathname</code> - Returns a string of the path that follows the domain.</li>
+                <li><code>window.location.assign()</code> - Can be used to load another resource from a URL provided as
+                    a parameter.</li>
+            </ul></li>
+            <li>Most of those properties are read/write, which means they can also be changed by assignment.</li>
+            <li>The <code>window.history</code> property can be used to access information about any previously visited
+                pages in the current browser session, not to be confused with the HTML5 History API.</li>
+            <li>The <code>window.screen</code> object contains information about the screen the browser is displayed on.
+                Things like height, width, available height and width, and color bit depth can be found. The
+                <code>screen</code> object has more uses for mobile devices.</li>
+            <li>Many of these methods and properties should be used with care as they have been abused in the past.</li>
+        </ul>
+        <h3>The Document Object</h3>
+        <ul>
+            <li>The <code>document</code> object has properties and methods that deal with the page that has been loaded
+                into the window. Here are a few methods worth looking at:</li>
+            <li><ul>
+                <li><code>document.write</code> - Writes a string of text to the page. If a page has already loaded, it
+                    will completely replace the current document. You can also include HTML in the string and it will
+                    become part of the DOM tree. Placing the method within a document inside <code>&lt;script&gt;</code> tags
+                        will inject the string into the markup and not overwrite the rest of the HTML on the page. The
+                        use of <code>document.write</code> is heavily frowned upon and there are only rare legitimate
+                        uses of it.</li>
+                <li><code>document.cookie</code> - Used to create a cookie which is a list of name/value pairs. Cookies
+                    are used to allow a browser to retrieve information between
+                    requests to remember user's previous visits. Using cookes for data storage is being replaced by the
+                    HTML5 localStorage API in many cases, but cookies are still useful for retaining state information
+                    such as if a user is logged in.</li>
+                <li><code>document.write</code></li>
+            </ul></li>
+        </ul>
+        <h3>Timing Functions</h3>
+        <ul>
+            <li>The <code>window.setTimeout()</code> method accepts a callback to a function as its first parameter and a number of milliseconds as its second paramenter.</li>
+            <li><code>window.clearTimeout()</code> will prevent the timeout if called before the setTimeout parameters are met.</li>
+            <li>The <code>window.setInterval()</code> method will repeatedly invoke the callback function after every given number of milliseconds.</li>
+            <li><code>window.clearInterval()</code> will stop the setInterval method.</li>
+            <li><code>setTimeout()</code> and <code>setInterval()</code> can be used to animate elements on a web page, although not as well as <code>window.requestAnimationFrame()</code>.</li>
+            <li><code>window.requestAnimationFrame()</code> has a much smoother performance.</li>
+            <li>In general, it is typically better to use CSS for any animation effects, although there may be times when JavaScript might be the better solution.</li>
+        </ul><br>
+
+
+
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 14:</strong> HTML5 APIs</h3>
+        <hr>
+        <h3>The <code>data-</code> Attribute</h3>
+        <ul>
+            <li>A way of embedding data in a web page using custom attributes that are ignored by the browser.</li>
+            <li>They are private to a page, so are not intended to be used by an external service - their sole purpose is to be used by a JavaScript program.</li>
+            <li>When naming these attributes, they must use the following format:</li>
+            <li><ul>
+                <li>Start with <code>date-</code>.</li>
+                <li>Contain only lowercase letters, numbers, hyphens, dots, colons, or underscores.</li>
+                <li>Include an optional string value.</li>
+            </ul></li>
+        </ul>
+        <h3>HTML5 Web Storage</h3>
+        <ul>
+            <li>The Web Storage API provides a key-value store on the client's computer that is similar to using cookies but has fewer restrictions, more storage capacity, and is generally easier to use.</li>
+            <li>Browsers that support the Web Storage API have a <code>window</code> object property called <code>localStorage</code> that has several properties and methods that are used to store data.</li>
+            <li>There is also a <code>sessionStorage</code> object that works like <code>localStorage</code> but the data is only saved for the current session.</li>
+            <li>Basics of using <code>localStorage</code>:</li>
+            <li><ul>
+                <li>To set and item and then retrieve it's value, you can use <code>localStorage.setItem('name', 'value')</code> and <code>localStorage.getItem('name')</code>.</li>
+                <li>Alternatively, you can use assignment, for example: <code>localStorage.name = 'value'</code>.</li>
+                <li>To remove something from local storage you can use the <code>removeItem</code> method or the <code>delete</code> operator or you can remove everything using the <code>clear</code> method.</li>
+            </ul></li>
+        </ul>
+        <h3>Geolocation</h3>
+        <ul>
+            <li>The Geolocation API is used to obtain the geographical position of the device.</li>
+            <li>Permission to use this has to be granted by the user first, due to privacy concerns.</li>
+            <li>Geolocation is a property of the <code>navigator</code> object.</li>
+        </ul>
+        <h3>Web Workers</h3>
+        <ul>
+            <li>Since JavaScript is a single-threaded language, web workers allow processes to be run in the background, adding support for concurrency in JavaScript.</li>
+            <li>The <code>Worker()</code> constructor function is used to create a new worker: <code>const worker = new Worker('task.js');</code>.</li>
+            <li>The function takes another JavaScript file as an argument and downloads it. Once the file has downloaded completely, the worker will start.</li>
+            <li>The variable that is assigned to the constructor function is used to refer to the worker in the main program, the keyword <code>self</code> is used to refer to the worker in the worker script.</li>
+            <li>Web worker use the concept of messages to communicate back and forth between the main script and the worker script.</li>
+            <li><code>worker.terminate()</code> is used to stop a worker from inside the main code or <code>self.close()</code> in used from inside the worker script.</li>
+            <li>Shared web workers can also be created to allow lots of different scripts on the same domain to access the same worker object.</li>
+            <li>The Service Worker API allows a worker script to run in the background with the added benefit of being able to intercept network requests.</li>
+        </ul>
+        <h3>Websockets</h3>
+        <ul>
+            <li>Websocket is a protocol that allows two-way communication with a server - also know as push messaging.</li>
+            <li>Check out websocket.org for more ways to use websockets and to learn more about them.</li>
+        </ul>
+        <h3>Notifications</h3>
+        <ul>
+            <li>The Notification API allows you to show messages using the system's notifications.</li>
+            <li>Permission must be granted by the user to send notifications, which can be achieved by using the <code>requestPermission() method.</code></li>
+        </ul>
+        <h3>Multimedia</h3>
+        <ul>
+            <li>HTML5 introduced the <code>audio</code> and <code>video</code> tags to insert audio and video clips into a web page, along with a Media API for controlling the clips.</li>
+            <li>The audio and video elements bring native support for multimedia into the browser and the API gives developers full control of the playback of audio and video.</li>
+        </ul>
+
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

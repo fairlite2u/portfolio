@@ -1,0 +1,17 @@
+body {
+    background-color: lavender;
+}
+
+#boxes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.examples {
+    width: 200px;
+    height: 250px;
+    margin: 2px;
+    padding: 12px;
+    text-align: center;
+    border: thistle solid 3px;
+}

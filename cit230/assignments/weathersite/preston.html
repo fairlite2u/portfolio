@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>The Weather Watcher | Preston, ID Weather and News</title>
+    <meta name="description" content="The primary weather resource serving the Idaho towns of Preston, Soda Springs, and Fish Haven">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="css/normalize.min.css" rel="stylesheet">
+    <link href="css/small.min.css" rel="stylesheet">
+    <link href="css/medium.min.css" rel="stylesheet">
+    <link href="css/large.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/weathericon128.png" type="image/x-icon"> 
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="images/weathericon128.png" alt="The Weather Watcher Icon">
+        <div class="headings">
+            <h1>The Weather Watcher</h1>
+            <div class="motto">Watching the Weather So You Don't Have To</div>
+        </div>
+    </header>
+    <nav class="v">
+        <ul class="navigation">
+            <li><a href="#" class="menu" onclick="toggleMenu()">&equiv; Menu</a></li>
+            <li><a href="./">Home</a></li>
+            <li><a href="preston.html" class="active">Preston</a></li>
+            <li><a href="sodasprings.html">Soda Springs</a></li>
+            <li><a href="fishhaven.html">Fish Haven</a></li>
+            <li><a href="stormcenter.html">Storm Center</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Preston, Idaho</h2>
+        <div class="hero">
+            <picture>
+                <source media="(max-width: 419px)" srcset="images/landscape-420crop.jpg">
+                <source media="(max-width: 749px)" srcset="images/landscape-750crop.jpg">
+                <source media="(min-width: 750px)" srcset="images/landscape-960crop.jpg">
+                <img src="images/landscape-420crop.jpg" alt="Aerial Town Photo">
+            </picture>
+            <section class="summary">
+                <h3>Weather Summary</h3>
+                <div class="stats">
+                    <p class="label">Currently: </p><p class="data"><span id="currenttemp"></span></p>
+                    <p class="label">High: </p><p class="data"><span id="hightemp"></span>&deg; F</p>
+                    <p class="label">Wind Chill: </p><p class="data"><span id="windchill"></span>&deg; F</p>
+                    <p class="label">Humidity: </p><p class="data"><span id="humidity"></span>%</p>
+                    <p class="label">Wind Speed: </p><p class="data"><span id="windspeed"></span> mph</p>
+                </div>
+            </section>
+        </div>
+        <section class="forecast">
+            <h3 id="forecast-header">5 Day Forecast</h3>
+            <div class="forecast-block">
+                <div class="day1">
+                    <span class="days" id="weekday1"></span>
+                    <img class ="icon" id="icon1" src="#" alt="#">
+                    <span class="data" id="forecast1"></span>
+                </div>
+                <div class="day2">
+                    <span class="days" id="weekday2"></span>
+                    <img class="icon" id="icon2" src="#" alt="#">
+                    <span class="data" id="forecast2"></span>
+                </div>
+                <div class="day3">
+                    <span class="days" id="weekday3"></span>
+                    <img class="icon" id="icon3" src="#" alt="#">
+                    <span class="data" id="forecast3"></span>
+                </div>
+                <div class="day4">
+                    <span class="days" id="weekday4"></span>
+                    <img class="icon" id="icon4" src="#" alt="#">
+                    <span class="data" id="forecast4"></span>
+                </div>
+                <div class="day5">
+                    <span class="days" id="weekday5"></span>
+                    <img class="icon" id="icon5" src="#" alt="#">
+                    <span class="data" id="forecast5"></span>
+                </div>
+            </div>
+        </section>
+        <article class="main-article">
+            <picture>
+                <img class="articleimg" src="images/baseball-full.jpg" alt="Youth Baseball Game">
+            </picture>
+            <h3>The Dampered Baseball Season</h3>
+            <div class="acc">by Astro Jenson</div>
+            <br>
+            <p>The rainy weather this year has been quite a challenge for the city recreation leagues.
+                Only about half of the scheduled baseball games for grades K-8 have been actually played!
+                The story continues on for several more sentences. Talks about all the rain being good because
+                it means we won't have to worry this year about drought conditions even though it is affecting
+                the sports teams ability to play ball. Yada yada yada. 
+            </p>
+            <p>    
+                Lorem ipsum dolor sit amet, eu per facete facilis
+                ullamcorper,
+                et dico causae interpretaris mea. Cu harum utroque eum, dico quodsi adversarium quo ut. Ne eros
+                conceptam voluptaria mei,
+                maiorum eloquentiam eu sea. Stet consul sea ad. Ne augue semper tincidunt mei. Fabellas principes ut
+                mel,
+                nec omnium aliquip antiopam ex. Ex vis semper voluptaria accommodare, malorum omnesque mea an.
+            </p>
+        </article>
+        <section class="events">
+            <h3 id="eventhead">Events Calendar</h3>
+                <div class="eventbox">
+                    
+                </div>
+        </section>
+
+    </main>
+
+    <div class="contact">
+        <section>
+            <div class="leftcol">
+                <picture>
+                    <img class="map" src="images/idaho-map480.jpg" alt="Picture of Idaho map">
+                </picture>
+            </div>
+            <div class="rightcol">
+                <h4>The Weather Watcher</h4>
+                <p>30 N 1st E</p>
+                <p>Preston, ID 83263</p>
+                <br>
+                <p>&phone; &nbsp; 208.555.5555</p>
+                <p>&#9993; &nbsp; weather@theweatherwatcher.com</p>
+                <br><br>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img class="icons" src="images/facebook-logo75.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.pinterest.com/" target="_blank">
+                        <img class="icons" src="images/pinterest-logo75.png" alt="Pinterest">
+                    </a>
+                    <a href="https://www.twitter.com/" target="_blank">
+                        <img class="icons" src="images/twitter-logo75.png" alt="Twitter">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy;2019 The Weather Watcher | <a class="sources" href="sources.html">Attributions</a> | Jennifer Thomas<br>
+            <span id="currentdate">
+            </span>
+        </p>
+    </footer>
+    <script src="js/hamburger.js"></script>
+    <script src="js/currentdate.js"></script>
+    <script src="js/prestonweatherdata.js"></script>
+    <script src="js/prestonevents.js"></script>
+</body>
+
+</html>

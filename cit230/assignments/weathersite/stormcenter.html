@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>The Weather Watcher | Report an active storm center</title>
+    <meta name="description"
+        content="The primary weather resource serving the Idaho towns of Preston, Soda Springs, and Fish Haven">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="css/normalize.min.css" rel="stylesheet">
+    <link href="css/small.min.css" rel="stylesheet">
+    <link href="css/medium.min.css" rel="stylesheet">
+    <link href="css/large.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/weathericon128.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="images/weathericon128.png" alt="The Weather Watcher Icon">
+        <div class="headings">
+            <h1>The Weather Watcher</h1>
+            <div class="motto">Watching the Weather So You Don't Have To</div>
+        </div>
+    </header>
+    <nav class="v">
+        <ul class="navigation">
+            <li><a href="#" class="menu" onclick="toggleMenu()">&equiv; Menu</a></li>
+            <li><a href="./">Home</a></li>
+            <li><a href="preston.html">Preston</a></li>
+            <li><a href="sodasprings.html">Soda Springs</a></li>
+            <li><a href="fishhaven.html">Fish Haven</a></li>
+            <li><a href="stormcenter.html" class="active">Storm Center</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="stormbox">
+            <h2 class="stormhead">Storm Center</h2>
+            <h3 class="stormsubhead">Would you like to report severe weather conditions?</h3><br>
+            <h3 class="stormsubhead">Fill out the form below:</h3>
+            <p class="stormsubhead" id="subrequired"><em>items marked with a * are required</em></p>
+            <form method="GET" action="thanks.html" name="stormreport">
+                <fieldset>
+                    <legend>Eye Witness Information</legend>
+                    <label class="userinfo">Full Name* <input type="text" name="fullname" required
+                            pattern="[A-Za-z]{5, }"></label>
+                    <label class="userinfo">Email Address <input type="email" name="email"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            placeholder="report@theweatherwatcher.com"></label>
+                    <label class="userinfo">Phone Number* <input type="tel" name="phone" required
+                            placeholder="1235556789"></label>
+                    <label class="userinfo">Zip Code* <input type="number" name="zip" required></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Storm Information</legend>
+                    <label class="storminfo">Storm Date <input type="date" name="stormdate"> </label>
+                    <label class="storminfo">Storm Type <input list="types" name="stormtype">
+                        <datalist id="types">
+                            <option value="Flood"></option>
+                            <option value="Hail"></option>
+                            <option value="Hurricane"></option>
+                            <option value="Thunderstorm"></option>
+                            <option value="Tornado"></option>
+                        </datalist>
+                    </label>
+                    <label class="slider">Storm Severity (1 to 10)
+                        <span id="ratingvalue">5</span>
+                        <input type="range" id="scale" value="5" min="1" max="10" step="1"
+                            oninput="adjustRating(this.value)" onchange="adjustRating(this.value)">
+                    </label>
+                    <label class="storminfo" id="region">Storm Region
+                        <select name="region">
+                            <option value="" selected disabled>Select Region...</option>
+                            <option value="preston">Preston</option>
+                            <option value="sugarcity">Sugar City</option>
+                            <option value="fishhaven">Fish Haven</option>
+                        </select>
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Are You In Danger?</legend>
+                    <label class="priority"><input type="radio" name="danger" value="yes"> Yes</label>
+                    <label class="priority"><input type="radio" name="danger" value="maybe"> Maybe</label>
+                    <label class="priority"><input type="radio" name="danger" value="no"> No</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Additional Information: </legend>
+                    <textarea name="addinfo" id="addinfo" cols="34" rows="5"></textarea>
+                </fieldset>
+                <input type="submit" name="buttonsubmit" id="submitbutton" value="Send Your Report">
+            </form>
+        </div>
+
+    </main>
+
+    <div class="contact">
+        <section>
+            <div class="leftcol">
+                <picture>
+                    <img class="map" src="images/idaho-map480.jpg" alt="Picture of Idaho map">
+                </picture>
+            </div>
+            <div class="rightcol">
+                <h4>The Weather Watcher</h4>
+                <p>30 N 1st E</p>
+                <p>Preston, ID 83263</p>
+                <br>
+                <p>&phone; &nbsp; 208.555.5555</p>
+                <p>&#9993; &nbsp; weather@theweatherwatcher.com</p>
+                <br><br>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img class="icons" src="images/facebook-logo75.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.pinterest.com/" target="_blank">
+                        <img class="icons" src="images/pinterest-logo75.png" alt="Pinterest">
+                    </a>
+                    <a href="https://www.twitter.com/" target="_blank">
+                        <img class="icons" src="images/twitter-logo75.png" alt="Twitter">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy;2019 The Weather Watcher | <a class="sources" href="sources.html">Attributions</a> | Jennifer
+            Thomas<br>
+            <span id="currentdate">
+            </span>
+        </p>
+    </footer>
+    <script src="js/hamburger.js"></script>
+    <script src="js/currentdate.js"></script>
+    <script src="js/rating.js"></script>
+</body>
+
+</html>

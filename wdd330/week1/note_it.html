@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Note It!</title>
+
+  <script>
+    function saveNote() {
+      // get current date and time stamp 
+      var currentDateAndTime = new Date();
+      // note description and note body
+      var aNoteDescription = document.getElementById("description_input").value;
+      var aNoteText = document.getElementById("note_editor").value;
+      // add current date and time as a string to note description and create an element for it to go in
+      var aCompleteNote = currentDateAndTime.toLocaleString() + "--" + aNoteDescription;
+      aCompleteNote += "<p>" + aNoteText + "</p>";
+
+      var storedNotesString = localStorage.getItem("all_notes");
+      // use JSON to store an array of notes as a string and then put into a variable 
+      // Parse means to examine a string character by character to determine what the string means
+      var allNotes = JSON.parse(storedNotesString);
+      // This if statement creates an empty array to store the notes in
+      if (allNotes == null) {
+        allNotes = [];
+      }
+      // This puts your notes in the array and stores them in local storage using JSON and the stringify function
+      allNotes.push(aCompleteNote);
+      var allNotesString = JSON.stringify(allNotes);
+      localStorage.setItem("all_notes", allNotesString);
+      // Call the showAllNotes function within the saveNote function so new note is automatically shown when saved
+      showAllNotes();
+      // Add these lines so that the description box and text box are cleared out and ready for the next note, if necessary.
+      if (aNoteDescription != null) {
+        document.getElementById("description_input").value = null;
+        document.getElementById("note_editor").value = null;
+      }
+    }
+
+    function showAllNotes() {
+      var storedNotesString = localStorage.getItem("all_notes");
+      var allNotes = JSON.parse(storedNotesString);
+      /* Different from line 22 above - not null instead of if null.
+       *  This is so the computer only tries to display notes if there are notes to display. 
+       */
+      if (allNotes != null) {
+        var noteDisplayer = document.getElementById("all_notes_display");
+        // This line clears the screen before showing all the notes instead of duplicating the notes.
+        noteDisplayer.innerHTML = null;
+        // Gets the number that needs to be used for when the loop should stop
+        var numberOfNotes = allNotes.length;
+        for (var i = 0; i < numberOfNotes; i++) {
+          var aNote = allNotes[i];
+          // <hr> adds a horizontal line across the page before each note (doesn't need a closing tag)
+          noteDisplayer.innerHTML += "<hr><p>" + aNote + "</p>";
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: steelblue;
+      color: azure;
+    }
+    h1 {
+      color: darkblue;
+      text-indent: 0px;
+    }
+    input {
+      border: none;
+      border-radius: 3px;
+      box-shadow: 0px 0px 3px darkblue inset;
+      height: 25px;
+      width: 200px;
+      text-indent: 5px;
+    }
+    /* This keeps the box from having an extra outline when clicked into */
+    input:focus {
+      outline: none;
+    }
+    #note_entry_area {
+      width: 500px;
+      padding-left: 10px;
+      border: none;
+      border-radius: 3px;
+      box-shadow: 0px 0px 3px darkblue inset;
+      text-indent: 5px;
+    }
+    textarea {
+      margin-top: 10px;
+      border: none;
+      border-radius: 3px;
+      box-shadow: 0px 0px 3px darkblue inset;
+      width: 90%;
+      height: 150px;
+      text-indent: 5px;
+      resize: none;
+      overflow: scroll;
+    }
+    button {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<!-- Use the onload event to automatically load any saved notes-->
+
+<body onload="showAllNotes()">
+  <section id="note_entry_area">
+    <h1>Note It!</h1>
+    Description: <input id="description_input"></input>
+    <!-- Reminder that the placeholder puts text in the textarea that goes away when the user types in the text box-->
+    <textarea id="note_editor" placeholder="Note it down. Don't forget."></textarea>
+    <!-- button to run function to save and show new notes-->
+    <button onclick="saveNote()">Save</button>
+  </section>
+  <section id="all_notes_display"></section>
+  <div class="buttonHolder">
+    <form>
+        <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Even or Odd?</title>
+    <script>
+        function checkNumbers() {
+            // change even or odd function to a loop by adding an array
+            var someNumbers = [25, 11, -2, 14, "What?? This isn't a number!", -1, -10];
+            // add for loop
+            for (var i = 1; i < 7; i++) {
+                // modify variable to pull numbers from array instead of from user input
+                var numberAsText = someNumbers[i]
+                var aNumber = parseInt(numberAsText);
+                if (numberAsText != "" && !isNaN(aNumber)) {
+                    var remainder = Math.abs(aNumber % 2);
+                    // change the = to += so that for each item in the array, the result will be printed
+                    // add "<p>" before aNumber so that each result will be put on a separate line, or paragraph
+                    // ad </p> to the end of the closing text so that the paragragh tag is closed
+                    if (aNumber != 0 && remainder == 0) {
+                        document.getElementById("result_display").innerHTML += "<p>" + aNumber + " is even.</p>";
+                    } else if (aNumber != 0 && remainder == 1) {
+                        document.getElementById("result_display").innerHTML += "<p>" + aNumber + " is odd.</p>";
+                    } else {
+                        document.getElementById("result_display").innerHTML += "<p>" + "0 is neither even nor odd.</p>"
+                    }
+                } else {
+                    document.getElementById("result_display").innerHTML += "<p>" + "That is not a number.</p>"
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: lightsteelblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Even or Odd?</h1>
+    <!-- Remove user input box-->
+    <button onclick="checkNumbers()">Check the items in the array</button>
+    <section id="result_display"></section>
+</body>
+</html>

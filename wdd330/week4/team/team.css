@@ -1,0 +1,32 @@
+.board {
+    width: 400px;
+    height: 400px;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+.board tr {
+    text-align: center;
+    font-weight: 700;
+    font-family: sans-serif;
+    font-size: 48px;
+}
+
+.board td {
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    width: 33.3%;
+    height: 33.3%;
+}
+
+.board td:last-child {
+    border-right: 0;
+}
+
+.board tr:last-child td {
+    border-bottom: 0;
+}
+#reset {
+    margin-left: 50px;
+}

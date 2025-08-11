@@ -1,0 +1,16 @@
+@media only screen and (min-width: 64em) {
+    /*****header*****/
+    h1 {
+        font-size: 3rem;
+    }
+    .motto {
+        font-size: 1.2rem;
+    }
+    /*****Gallery*****/
+    .imagegallery {
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+    .shadow:hover {
+        box-shadow: 0 0 50px #0e6096;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 1 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+   
+    <main>
+        <h2>Week 1 Notes</h2><br>
+        <h3><strong><cite>Doing Stuff With Web Things</cite></strong></h3><hr>
+        <ul>
+        <li>Think, Design, Test, Create - not the "Oh Crap!" method.</li>
+        <li>HTML - define the stuff to be shown to the user.</li>
+        <li>CSS - make the stuff shown pleasant to see.</li>
+        <li>JavaScript - make the user experience interactive rather than passive.</li>
+        <li>Make things describable as a function for practice, i.e. takeShower or makeDinner</li>
+        <li>Figure out what, if anything, is going in, what, if anything, is coming out, and what may be happening as part of what is being done.</li>
+        <li>Always give a function a name that is a verb.</li>
+        <li>If you are dealing with an <code>input</code> or <code>textarea</code> use value; a <code>section</code>, use innerHTML.</li>
+        <li>Think about key-value pairs & describe them, i.e. in gradebooks, the student name is the key, the grades are the values.</li>
+        <li>Make sure you use <code>==</code> to compare if two things are equal and <code>=</code> to put something in a variable.</li>
+        <li><code>!=</code> means "not equal to"; <code>!</code> means NOT; <code>&&</code> means AND.</li>
+        <li>The <code>parseInt</code> function tries to convert any text to an integer.</li>
+        <li><code>NaN</code> means "not a number".</li>
+        <li><code>isNan</code> function can be used to determine if input is "not a number".</li>
+        <li>The standard for loop parts when working with an array are: 
+            <ol>
+                <li>The <code>for</code> keyword</li>
+                <li>A variable to keep track of the location you are at in the array</li>
+                <li>A check to see if the loop should continue</li>
+                <li>An update that increases the location tracking variable by one</li>
+                <li>The lines of code to execute everytime you go around the loop</li>
+            </ol>
+          </li>  
+        </ul>    
+
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online" target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+</html>

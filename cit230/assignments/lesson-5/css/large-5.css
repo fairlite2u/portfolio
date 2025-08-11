@@ -1,0 +1,67 @@
+@media only screen and (min-width: 32.5em) {
+    /*****header*****/
+    header img {
+        width: 150px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .motto {
+        font-size: 1rem;
+    }
+    /*****navigation******/
+    .navigation li:first-child {
+        display: none;
+    }
+    .navigation li {
+        display: inline-block;
+        margin-right: 1rem;
+        list-style-type: none;
+    }
+    /*****Forecast*****/
+    .forecast {
+        display: inline;
+        margin: auto;
+    }
+    .forecast h3 {
+        padding: 15px;
+    }
+    .hero img {
+        width: 100%;
+        position: relative;
+        left: 0;
+    }
+    /*****Article*****/
+    .main-article {
+        display: inline-block;
+        margin: 20px auto;
+    }
+    .articleimg {
+        float: right;
+        margin-top: 20px;
+        margin-right: 10px;
+        width: 33%;
+        padding: 5px;
+    }
+    /*****Footer*****/
+    .contact {
+        margin: 50px auto;
+    }
+    .map {
+        float: right;
+        width: 33%;
+    }
+    footer {
+        margin: 20px auto;
+    }
+
+
+
+
+
+
+
+
+
+
+}

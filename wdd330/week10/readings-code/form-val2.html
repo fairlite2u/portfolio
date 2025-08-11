@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Form validation: Task 2</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+            font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+            padding: 1em;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input:invalid {
+            border: 2px dashed red;
+        }
+
+        input:invalid:required {
+            background-color: pink;
+        }
+
+        input:valid {
+            border: 2px solid black;
+        }
+
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h2>Enter your support query</h2>
+        <ul>
+            <li>
+                <label for="uname">User name:</label>
+                <input type="text" name="uname" id="uname" required pattern="[a-z]{1}\.[a-z0-9]{3,}" title="A single letter, followed by a period, followed by at least three more letters, all lowercase">
+            </li>
+            <li>
+                <label for="email">Email address:</label>
+                <input type="email" name="email" id="email" required pattern="[a-zA-Z0-9]+@bigcorp\.eu" title="One or more upper-case or lower-case letters or numbers followed by '@bigcorp.eu'">
+            </li>
+            <li>
+                <label for="phone">Phone number:</label>
+                <input type="text" name="phone" id="phone" required pattern="\d{10}|\d{3}[ -\.]\d{3}[ -\.]\d{4}">
+            </li>
+            <li>
+                <label for="comment">Comment:</label>
+                <textarea name="comment" id="comment" required>
+          </textarea>
+            </li>
+            <li>
+                <button>Submit comment</button>
+            </li>
+        </ul>
+    </form>
+</body>
+
+</html>

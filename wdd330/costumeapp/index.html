@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/blue-eyed_darner32.png" type="image/x-icon">
+    <title>Costume Inventory Management</title>
+</head>
+
+<body>
+
+    <main class="container main-container mt-4">
+        <h1>Costume Inventory Management</h1>
+        <div id="costume-details-div"></div>
+        <button id="show-inventory" class="btn btn-primary">Hide Current Inventory</button>
+        <div class="inventory-container expand" id="costumes">
+            <h2>Current Costume Inventory</h2>
+            <div class="filter">
+                <label for="filter-list">Filter Costumes:</label>
+                <select name="filter-list" id="filter-list" class="filter-list">
+                    <option value="all" selected>All</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="unisex">Unisex</option>
+                    <option value="adult">Adult</option>
+                    <option value="child">Child</option>
+                    <option value="infant">Infant</option>
+                </select>
+            </div>
+            <table id="inventory-table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Character</th>
+                        <th>Gender</th>
+                        <th>Size</th>
+                        <th class="action" id="details">Details</th>
+                        <th class="action" id="edit">Edit</th>
+                        <th class="action" id="delete">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="costume-list"></tbody>
+            </table>
+        </div>
+        <button id="add-inventory" class="btn btn-primary">Add New Costume To Inventory</button>
+        <div class="form-container">
+            <h2 id="add-heading">Add Costume Details</h2>
+            <h3 id="form-required">All Fields Are Required</h3>
+            <form id="costume-form">
+                <div class="form-group">
+                    <label for="character" class="form-label">Character:</label>
+                    <input type="text" id="character" class="form-control" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Gender:</legend>
+                          <input type="radio" id="male" name="gender" value="Male" required>
+                          <label for="male">Male</label><br>
+                          <input type="radio" id="female" name="gender" value="Female">
+                          <label for="female">Female</label><br>
+                          <input type="radio" id="unisex" name="gender" value="Unisex">
+                          <label for="unisex">Unisex</label>
+                          <input type="radio" id="default-gender" class="hidden" name="gender" value=""
+                            checked="checked">
+                          <label for="default-gender" class="hidden">Other</label>
+                    </fieldset>
+                </div>
+                <fieldset>
+                    <legend>Size:</legend>
+                    <div class="form-group fieldset-div1">
+                          <input type="radio" id="adult" name="age-group" value="Adult" required>
+                          <label for="adult">Adult</label><br>
+                          <input type="radio" id="child" name="age-group" value="Child">
+                          <label for="child">Child</label><br>
+                          <input type="radio" id="infant" name="age-group" value="Infant">
+                          <label for="infant">Infant</label>
+                          <input type="radio" id="default-age" class="hidden" name="age-group" value=""
+                            checked="checked">
+                          <label for="default-age" class="hidden">Other</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="size" class="hidden">Size:</label>
+                        <select name="size" id="size" required>
+                            <option value="" disabled selected hidden>Select the size:</option>
+                            <option value="X-Small">X-Small</option>
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="2XL">2XL</option>
+                            <option value="One-Size">One-Size</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <label for="picture-file" class="form-label">Picture of costume:</label>
+                   <p id="p-file-size">File size must be smaller than 1.1 Mb</p>
+                   <div id="picMessage"></div>
+                    <input type="file" id="picture-file" name="picture-file"><br><br>
+                    <img id="imgPreview" src="./images/No_Image_Available.jpg" alt="Preview" height="75" width="75">
+                </div>
+                <div class="form-group">
+                    <label for="notes" class="form-label">Notes:</label>
+                    <textarea name="notes" id="notes" class="form-control" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="index" class="form-label hidden">Index:</label>
+                    <input type="text" id="index" name="index" class="index-input" hidden>
+                </div>
+                <input type="submit" value="Add Costume" class="btn btn-primary add-btn">
+                <input type="submit" value="Edit Costume" class="btn btn-primary edit-btn hidden">
+                <input type="button" value="Cancel" class="btn btn-primary cancel-btn hidden">
+            </form>
+        </div>
+    </main>
+    <script src="./js/costumeController.js" type="module"></script>
+</body>
+
+</html>

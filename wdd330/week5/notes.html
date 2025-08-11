@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 5 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Week 5 Notes</h2><br>
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 10:</strong> Testing and Debugging</h3>
+        <hr>
+        <h3>Errors, Exceptions, and Warnings</h3>
+        <ul>
+            <li>Errors are cause when something goes wrong in a program, whether a system error, programmer error, or
+                user error.</li>
+            <li>System errors mean there is a problem with the system or external devices with which the program is
+                interacting. This can be difficult to fix but we should be aware of them and attempt to reduce their
+                impact by working around any problems they cause.</li>
+            <li>Programmer errors are our responsibility and we must minimize and fix them - they could be incorrect
+                syntax, faulty logic, or typos.</li>
+            <li>User errors could be considered programmer errors so we should try to predict any possible interactions
+                that might throw an error and provide a solution that doens't negatively affect the user experience.
+            </li>
+            <li>Exceptions are errors that produce a return value that can then be used by the program to deal with the
+                error.</li>
+            <li>An exception will also produce a <strong>stack trace</strong>, which is a sequence of functions or
+                method calls that lead to the point where the error occured. It will work backwards from point where the
+                error occurred to find the original function or method that started the sequence.</li>
+            <li>Warnings can occur if there's an error in the code that isn't enough to cause the program to crash. The
+                program will continue to run after the warning but the issue that produced the warning may cause the
+                program to continue running incorrectly.</li>
+        </ul>
+        <h3>The Importance of Testing and Debugging</h3>
+        <ul>
+            <li>Errors that fail silently in the background make them difficult to spot and longer to track down.</li>
+            <li>Ensure that code in development fails loudly so that errors can be identified and fixed quickly.</li>
+            <li>Any errors in code that is in productions should fail gracefully so that the user experience is not
+                affected, if possible.</li>
+            <li>Make sure exceptions a caught and dealt with and code is tested rigorously.</li>
+        </ul>
+        <h3>Strict Mode</h3>
+        <ul>
+            <li>Strict mode produces more exceptions and warnings and prohibits the use of some deprecated features.
+            </li>
+            <li>Helps spot more errors early on.</li>
+            <li>Writing in strict mode can help improve code's clarity and speed.</li>
+            <li>Encourages a better quality of JavaScript to be written, so its use is recommended</li>
+            <li>To use strict mode, add <code>'use strict';</code> to the first line of a JavaScript file.</li>
+            <li>The recommended way to invode strict mode is to place all your code into a self-invoking function. This
+                is especially helpful when using someone else's code so that only your code is forced to use strict
+                mode.</li>
+            <li>Modules are in strict mode by default.</li>
+            <li>Linting tools can be used to test the quality of JavaScript code beyond strict mode. They are useful for
+                enforcing a programming style guide.</li>
+        </ul>
+        <h3>Feature Detection</h3>
+        <ul>
+            <li>The recommended way to determine browser support for a feature is to use feature detection. This is done
+                by using an <code>if</code> statement to check whether an object or method exists before trying to
+                actually call the method.</li>
+            <li>Feature detection guarantees that the method is only called if it actually exists and fails gracefully,
+                without any exceptions being thrown, if the method doesn't exist.</li>
+        </ul>
+        <h3>Debugging in the Browser</h3>
+        <ul>
+            <li>Debugging is the process of finding out where bugs occur in the code and then dealing with them. Errors
+                often originate in a different place than when they occur.</li>
+            <li>Breakpoints can be created to halt the progress of the code so we can view the value of different
+                variables at that point in the program.</li>
+            <li>You can use the <code>alert()</code> method to show a dialog at certain points in the code to check the
+                value of variables at those points. However, this is now discouraged since new debugging tools have been
+                developed.</li>
+            <li><code>console.log()</code> can also be used. It won't stop the execution of the program like
+                <code>alert()</code> but can be used to log the value of variables at different stages of the porgram.
+            </li>
+            <li><code>console.trace()</code> will log an interactive stack trace in the console.</li>
+            <li>The <code>debugger</code> keyword can be used inside your code to create breakpoints to pause the
+                execution of the code. Just make sure to remove any references to the <code>debugger</code> command
+                before deployment of code!</li>
+        </ul>
+        <h3>Error Objects</h3>
+        <ul>
+            <li>An <code>error</code> object can be created by the host environment when an exception occurs, or it can
+                be created in the code using a constructor function. The parameter is used as the error message.</li>
+            <li>There are several error objects that can be used, including: <code>Error, RangeError, ReferenceError,
+                    SyntaxError, TypeError, URIError,</code> and <code>InternalError</code>.</li>
+            <li>These error objects can also be used as constructors to create custome error objects.</li>
+            <li>It is also possible to throw your own exceptions using the <code>throw</code> statement. This will allow
+                for any problems in your code to be highlighted and dealt with.</li>
+        </ul>
+        <h3>Exception Handling</h3>
+        <ul>
+            <li>Exception handling allows you to handle exceptions gracefully by catching the error. Then errors can be
+                hidden from user, but still identified. The error can then be dealt with while keeping the program
+                running.</li>
+            <li>For pieces of code that may result in an exception, we can wrap them in a <code>try</code> block.</li>
+            <li>If an exception occurs, it will pass the error object that is thrown into a <code>catch</code> block.
+            </li>
+            <li>The code inside the <code>catch</code> block will only run if an exception is thrown inside the
+                <code>try</code> block.</li>
+            <li>A <code>finally</code> block can be added after the <code>catch</code> block that will always be
+                executed after the <code>try</code> or <code>catch</code> block whether an exception occurred or not.
+            </li>
+        </ul>
+        <h3>Tests</h3>
+        <ul>
+            <li>Testing is an important part of programming that can often be overlooked.</li>
+            <li>Test-driven development (TDD) is the process of writing tests before any actual code. Then writing some code to make the tests pass.</li>
+            <li>Here is a workflow for TDD:</li>
+            <li><ol>
+                <li>Write tests (that initially fail)</li>
+                <li>Write code to pass the tests</li>
+                <li>Refactor the code</li>
+                <li>Test refactored code</li>
+                <li>Write more tests for new features</li>
+            </ol></li>
+            <li>Test-driven development is considered to be best practice but isn't always used. Any tests are better than no tests.</li>
+            <li>Testing frameworks like Jest provide a structure to write meaningful tests and then run them.</li>
+        </ul>
+
+
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

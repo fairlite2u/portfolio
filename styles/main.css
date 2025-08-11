@@ -1,0 +1,92 @@
+*  { 
+    margin: 0; box-sizing: border-box; 
+}
+
+body {
+    font-size: 16px;
+    line-height: 32px;
+    font-family: 'Verdana', 'Helvetica', sans-serif;
+    color: rgb(80, 117, 148);
+}
+
+h1 {
+    font-size: 36px;
+    color: rgb(183, 203, 223);
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 1px solid #bbb;
+}
+
+header, main, footer {
+    margin: 1.25rem auto;
+    padding: .5rem;
+    max-width: 960px;
+}
+
+header, footer, footer a {
+    text-align: center;
+    background-color: rgb(105, 105, 112);
+    color: rgb(183, 203, 223);
+}
+
+header img {
+    width: 240px;
+    height: auto;
+    float: right;
+}
+
+nav {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px auto;
+}
+
+.navigation {
+    padding-top: 0px;
+    list-style-type: none;
+}
+
+nav a {
+    padding: .5rem;
+    display: block;
+    color: rgb(183, 203, 223);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.navigation li:first-child {
+    display: block;
+}
+
+.navigation li {
+    display: none;
+}
+
+.active {
+    background: rgb(183, 203, 223);
+    color:  #223f64;
+}
+
+nav a:hover {
+    background: rgb(80, 117, 148);
+    color: rgb(183, 203, 223);
+}
+
+.responsive li {
+    display: block;
+}
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+hr {
+    width: 90%;
+}
+footer {
+    font-size: 12px;
+}

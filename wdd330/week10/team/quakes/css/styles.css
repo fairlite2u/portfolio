@@ -1,0 +1,29 @@
+body {
+    background-color: bisque;
+    margin: 0;
+}
+main {
+    max-width: 350px;
+    margin: 10px auto;
+
+}
+h1 {
+    background-color: darkgreen;
+    color:bisque;
+    text-align: center;
+    font-size: 3rem;
+}
+li {
+    font-size: 1.1rem;
+    max-width: 300px;
+    margin-bottom: 16px;
+    list-style:circle;
+    border-bottom: darkgreen dashed 2px;
+}
+
+@media only screen and (min-width:32.5em){
+    main {
+        max-width: 900px;
+}
+li { max-width: 850px;}
+}

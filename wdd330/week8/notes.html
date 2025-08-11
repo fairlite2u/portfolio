@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 8 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Week 8 Notes</h2><br>
+
+        <h3><strong><cite>HTML5 & CSS3 For the Real World</cite> Chapter 8:</strong> CSS3 Transforms and Transitions</h3>
+        <hr>
+        <h3>Transforms</h3>
+        <ul>
+            <li>The CSS3 <code><strong>transform</strong></code> property lets you translate, rotate, scale, and/or skew any element on the page.</li>
+            <li>Manipulate an element's appearance using transform functions:</li>
+            <li><ul>
+                <li><code>transform: translate(x,y); transform: translateX(); transform: translateY()</code> - allows you to move elements left, right, up, or down.</li>
+                <li><code>transform: scale(x,y); transform: scaleX(); transform: scaleY()</code> - Scales and element by the defined factors horizontally and vertically.</li>
+                <li><code>transform: rotate()</code> - Rotates an element around the point of origin by a specified angle value.</li>
+                <li><code>transform: skew(x,y); transform: skewX(); transform: skewY()</code> - Specifies a skew along the x and y axes.</li>
+                <li><code>transform:matrix(n,n,n,n,n,n)</code> - Combines all the 2D transform methods into one.</li>
+            </ul></li>
+            <li>There is also a <code>transform-origin</code> property that controls the origin from which the transforms are applied.</li>
+        </ul>
+        <h3>Transitions</h3>
+        <ul>
+            <li>The CSS3 <code><strong>transition</strong></code> property allow the values of CSS properties to change over time, essentially providing simple animations.</li>
+            <li>Steps to create a simple transition using only CSS:</li>
+            <li><ol>
+                <li>Declare the orignial state of the element in the default style declaration.</li>
+                <li>Declare the final state of your transitioned element; for example, a <code>:hover</code> state.</li>
+                <li>Include the transition functions in your default style declaration using the transition properties.</li>
+            </ol></li>
+            <li>Make sure to note that the <code>transition</code> is declared in the default or originating state.</li>
+            <li>Transition properties:</li>
+            <li><ul>
+                <li><code>transition-property</code> - Defines the CSS properties of the element that should be transitioned, with <code>all</code> for all properties being the default.</li>
+                <li><code>transition-duration</code> - Sets how long the transition will take, specified in seconds or milliseconds.</li>
+                <li><code>transition-timing-function</code> - Controls the pace of the transition in more granular detail.</li>
+                <li><code>transition-delay</code> - Allows you to delay the start of the transition.</li>
+                <li>The <code>transition</code> shorthand property allows you to combine the above 4 values into one declaration.</li>
+            </ul></li>
+            <li>The <code>transition</code> property can be applied to the <code>transform</code> property.</li>
+        </ul>
+        <h3>Animations</h3>
+        <ul>
+            <li>CSS animations allow you to control each step of an animation via keyframes.</li>
+            <li>A keyframe is a snapshot that defines a starting or end point of any smooth transition.</li>
+            <li>Animations allow us to add any number of keyframes inbetween the start and end points.</li>
+            <li>To create an animation, use the <code>@keyframes</code> rule followed by a name of your choosing.</li>
+            <li>Animation properties:</li>
+            <li><ul>
+                <li><code>animation-name</code> - This property is used to attach an animation to an element.</li>
+                <li><code>animation-duration</code> - This property defines the length of time an animation takes to complete one iteration.</li>
+                <li><code>animation-timing-function</code> - This property determines how the animation will progress over its duration.</li>
+                <li><code>animation-iteration-count</code> - This property lets you define how many times the animation will play through.</li>
+                <li><code>animation-direction</code> - This property allows you to control what direction and animation plays in.</li>
+                <li><code>animation-delay</code> - This property is used to define how many milliseconds or seconds to wait before the browser begins the animation.</li>
+                <li><code>animation-fill-mode</code> - This property defines what happens before the first animation iteration begins and after the last animation iteration concludes.</li>
+                <li><code>animation-play-state</code> - This property defines whether the animation is running or paused.</li>
+                <li>The shorthand <code>animation</code> property allows you to declare values for all or some of the properties at once.</li>
+            </ul></li>
+        </ul><br>
+
+        <h3><strong><cite>HTML5 & CSS3 For the Real World</cite> Chapter 12:</strong> Canvas, SVG, and Drag and Drop</h3>
+        <hr>
+        <h3>Canvas</h3>
+        <ul>
+            <li>HTML5's Canvas API allows us to draw anything through JavaScript.</li>
+            <li>Canvas can be used for animation, game graphics, data visualization, photo manipulation, and real-time video processing.</li>
+            <li>If the height and width are different than the default, it's best to explicitly specify the attributes in the canvas element</li>
+        </ul>
+
+        <h3>SVG</h3>
+        <ul>
+            <li>SVG stands for Scalable Vector Graphics, which is a specific file format that allows you to describe vector graphics using XML.</li>
+            <li>Unlike canvas, images created with SVG are available via the DOM.</li>
+            <li>Image editors, like Inkscape (inkscape.org) can be used to help create SVG images.</li>
+        </ul>
+        <h3>Drag and Drop</h3>
+        <ul>
+            <li>The Drag and Drop API allows us to specify that certain elements are draggable, and then specify what should happen when these draggable elements are dragged over or dropped onto other elements on the page.</li>
+            <li>Not supported by Android or iOS.</li>
+            <li>There are two major kinds of functionality that can be implements with Drag and Drop: dragging files from your computer into a web page (in combination with the File API) or dragging elements into other elements on the same page.</li>
+            <li>Steps to adding drag and drop to your page:</li>
+            <li><ol>
+                <li>Set the <code>draggable</code> attribute on any HTML elements you'd like to be draggable.</li>
+                <li>Add an event listener for the <code>dragstart</code> event on any draggable HTML element.</li>
+                <li>Add an event listener for the <code>dragover</code> and <code>drop</code> events on any elements that you want to have accept dropped items.</li>
+            </ol></li>
+            <li><code>draggable</code> is not a Boolean attribute, so you have to explicitly set it to true.</li>
+            <li>DataTransfer objects allow us to set and get data about the elements that are being dragged.</li>
+        </ul>
+
+
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

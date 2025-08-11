@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>ToDo Example</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Language" content="en-us" />
+	<meta name="Robots" content="Follow, Index" />
+	<meta name="Distribution" content="Worldwide" />
+	<meta name="Rating" content="General" />
+
+	<meta name="DESCRIPTION" content="Extended development and testing different JavaScript Ideas" />
+	<meta name="KEYWORDS" content="Personal, Expansion, Work, ToDo Example" />
+	<meta name="Author" content="Michael Carey" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="">Html Demo</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+					<ul class="navbar-nav flex-grow-1">
+						<!-- <li class="nav-item">
+							<a class="nav-link text-dark" href="http://vip.MLMLinkup.com" target="_blank">News</a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<div class="container-fluid body-content">
+		<partial name="_CookieConsentPartial" />
+		<main role="main" class="pb-3">
+			<div class="row">
+				<div class="col">Col 1</div>
+				<div class="col">Col 2</div>
+				<div class="col">
+					<div class="row">
+						<div class="col">
+							<div class="todolist not-done">
+								<h1>Todos</h1>
+								<input type="text" class="form-control add-todo" placeholder="Add todo">
+								<button id="checkAll" class="btn btn-success">Mark all as done</button>
+
+								<hr>
+								<ul id="sortable" class="list-unstyled">
+									<li class="ui-state-default">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" value="" />Take out the trash</label>
+										</div>
+									</li>
+									<li class="ui-state-default">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" value="" />Buy bread</label>
+										</div>
+									</li>
+									<li class="ui-state-default">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox" value="" />Teach penguins to fly</label>
+										</div>
+									</li>
+								</ul>
+								<div class="todo-footer">
+									<strong><span class="count-todos"></span></strong> Items Left
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="todolist">
+									<h1>Already Done</h1>
+									<ul id="done-items" class="list-unstyled">
+										<li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span
+													class="glyphicon glyphicon-remove"></span></button></li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	</main>
+	</div>
+
+	<footer class="border-top footer text-muted">
+		<div class="container small">
+			&copy; 2016-@DateTime.Now.Year - <a href="http://www.AGameEmpowerment.com" target="_blank">A Game
+				Empowerment, LLC.</a>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<script>
+		$("#sortable").sortable();
+		$("#sortable").disableSelection();
+
+		countTodos();
+
+		// all done btn
+		$("#checkAll").click(function () {
+			AllDone();
+		});
+
+		//create todo
+		$('.add-todo').on('keypress', function (e) {
+			e.preventDefault
+			if (e.which == 13) {
+				if ($(this).val() != '') {
+					var todo = $(this).val();
+					createTodo(todo);
+					countTodos();
+				} else {
+					// some validation
+				}
+			}
+		});
+		// mark task as done
+		$('.todolist').on('change', '#sortable li input[type="checkbox"]', function () {
+			if ($(this).prop('checked')) {
+				var doneItem = $(this).parent().parent().find('label').text();
+				$(this).parent().parent().parent().addClass('remove');
+				done(doneItem);
+				countTodos();
+			}
+		});
+
+		//delete done task from "already done"
+		$('.todolist').on('click', '.remove-item', function () {
+			removeItem(this);
+		});
+
+		// count tasks
+		function countTodos() {
+			var count = $("#sortable li").length;
+			$('.count-todos').html(count);
+		}
+
+		//create task
+		function createTodo(text) {
+			var markup = '<li class="ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />' + text + '</label></div></li>';
+			$('#sortable').append(markup);
+			$('.add-todo').val('');
+		}
+
+		//mark task as done
+		function done(doneItem) {
+			var done = doneItem;
+			var markup = '<li>' + done + '<button class="btn btn-default btn-xs pull-right  remove-item"><span class="glyphicon glyphicon-remove"></span></button></li>';
+			$('#done-items').append(markup);
+			$('.remove').remove();
+		}
+
+		//mark all tasks as done
+		function AllDone() {
+			var myArray = [];
+
+			$('#sortable li').each(function () {
+				myArray.push($(this).text());
+			});
+
+			// add to done
+			for (i = 0; i < myArray.length; i++) {
+				$('#done-items').append('<li>' + myArray[i] + '<button class="btn btn-default btn-xs pull-right  remove-item"><span class="glyphicon glyphicon-remove"></span></button></li>');
+			}
+
+			// myArray
+			$('#sortable li').remove();
+			countTodos();
+		}
+
+		//remove done task from list
+		function removeItem(element) {
+			$(element).parent().remove();
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Team Activity</title>
+</head>
+<body>
+    <!-- Requirement 1 -->
+    <input type='text' id='input'>
+    <button id='button' onclick="readInput()">You said what?</button>
+    <div id='showInput'></div><br>
+
+    <!-- Requirement 2 -->
+    <input type='text' id='numInput'>
+    <button id='button' onclick="checkInput()">Sum Numbers from 1 to Entry</button>
+    <div id='inputSum'></div><br>
+
+    <!-- Requirement 3 -->
+    <input type='text' id='num1'>
+    <input type='text' id='num2'>
+    <!--<button id='button' onclick="addInputs()">+</button>
+     <div id='inputAdd'></div><br> -->
+
+    <!-- Stretch -->
+    <button id='button' onclick="performCalc(add)">+</button>
+    <button id='button' onclick="performCalc(subtract)">-</button>
+    <button id='button' onclick="performCalc(multiply)">x</button>
+    <button id='button' onclick="performCalc(divide)">/</button>
+    <div id='inputCalc'></div><br>
+
+    <script>
+        // Requirement 1
+        function readInput(){
+            const userInput = document.getElementById('input').value;
+            document.getElementById('showInput').innerHTML = userInput;
+        }
+
+        // Requirement 2
+        function checkInput(){
+            const input = document.getElementById('numInput').value;
+            const num = parseInt(input);
+            if (num !== NaN){
+                document.getElementById('inputSum').innerHTML = sum(num);
+            }   
+        }
+
+        function sum(number){
+            let total = 0;
+            for (let i = 1; i <= number; i++){
+                total += i;
+            }
+            return total;
+        }
+
+        // Requirement 3
+        function addInputs(){
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            if (num1 !== NaN && num2 !== NaN){
+                // document.getElementById('inputAdd').innerHTML = num1 + num2;
+                document.getElementById('inputCalc').innerHTML = num1 + num2;
+            }
+        }
+
+        // Stretch
+        function getInput(inputId){
+            const num = parseFloat(document.getElementById(inputId).value);
+            if (num !== NaN){
+                return num;
+            } else {
+                return 0;
+            }
+        }
+
+        function sendOutput(value){
+            document.getElementById('inputCalc').innerHTML = value;
+        }
+
+        // function declaration
+        function add(num1, num2){
+            return num1 + num2;
+        }
+
+        // function expression
+        const subtract = function(num1, num2){
+            return num1 - num2;
+        }
+
+        // arrow function
+        const multiply = (num1, num2) => num1 * num2;
+
+        // function declaration
+        function divide(num1, num2){
+            return num1 / num2;
+        }
+
+        function performCalc(operation){
+            const total = operation(getInput('num1'), getInput('num2'));
+            sendOutput(total);
+        }
+
+    </script>
+</body>
+</html>

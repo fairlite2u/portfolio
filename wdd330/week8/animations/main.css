@@ -1,0 +1,262 @@
+body {
+    background-color: dimgray;
+    color: white;
+}
+
+#boxes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.examples {
+    width: 350px;
+    height: 400px;
+    margin: 2px;
+    padding: 12px;
+    text-align: center;
+    border: thistle solid 3px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+#duration {
+    margin-left: 25px;
+    background-color: rebeccapurple;
+    position: relative;
+    animation-name: durationEx;
+    animation-duration: 4s;
+}
+
+@keyframes durationEx {
+    0% {
+        background-color: rebeccapurple;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: firebrick;
+        left: 200px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: darkgreen;
+        left: 200px;
+        top: 200px;
+    }
+
+    75% {
+        background-color: darkblue;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: rebeccapurple;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.timing {
+    height: 30px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    background: firebrick;
+    font-weight: bold;
+    position: relative;
+    animation: timingEx 5s infinite;
+}
+
+#timing1 {
+    animation-timing-function: linear;
+}
+
+#timing2 {
+    animation-timing-function: ease;
+}
+
+#timing3 {
+    animation-timing-function: ease-in;
+}
+
+#timing4 {
+    animation-timing-function: ease-out;
+}
+
+#timing5 {
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes timingEx {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 180px;
+    }
+}
+
+#iteration {
+    margin-left: 25px;
+    background-color: darkgreen;
+    position: relative;
+    animation-name: iterationEx;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+}
+
+@keyframes iterationEx {
+    0% {
+        background-color: darkgreen;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: darkblue;
+        left: 200px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: rebeccapurple;
+        left: 200px;
+        top: 200px;
+    }
+
+    75% {
+        background-color: firebrick;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: darkgreen;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+#direction {
+    margin-left: 25px;
+    background-color: darkblue;
+    position: relative;
+    animation-name: directionEx;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+@keyframes directionEx {
+    0% {
+        background-color: darkblue;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: rebeccapurple;
+        left: 200px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: firebrick;
+        left: 200px;
+        top: 200px;
+    }
+
+    75% {
+        background-color: darkgreen;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: darkblue;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+#delay {
+    margin-left: 25px;
+    background-color: orange;
+    position: relative;
+    animation-name: delayEx;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+@keyframes delayEx {
+    0% {
+        background-color: orange;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: green;
+        left: 200px;
+        top: 200px;
+    }
+
+    75% {
+        background-color: blue;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: orange;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+#fill {
+    background: magenta;
+    position: relative;
+    animation-name: fillEx;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fillEx {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: 180px;
+        background-color: yellow;
+    }
+}
+
+#animation {
+    margin-left: 25px;
+    background-color: black;
+    position: relative;
+    animation: animationEx 5s linear 2s infinite alternate;
+  }
+  
+  @keyframes animationEx {
+    0%   {background-color:black; left:0px; top:0px;}
+    25%  {background-color:gold; left:200px; top:0px;}
+    50%  {background-color:white; left:200px; top:200px;}
+    75%  {background-color:hotpink; left:0px; top:200px;}
+    100% {background-color:black; left:0px; top:0px;}
+  }

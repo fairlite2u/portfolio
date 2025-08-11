@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WDD330 | Week 7 Notes</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <header>
+        <h1>WDD 330 Portfolio</h1>
+        <h2>Jennifer C. Thomas</h2>
+    </header>
+
+    <main>
+        <h2>Week 7 Notes</h2><br>
+
+        <h3><strong><cite>MDN Web Docs: Cross-Origin Resource Sharing(CORS)</cite></strong></h3>
+        <hr>
+        <ul>
+            <li>Cross Origin Resource Sharing or CORS is an HTTP-header based mechanism that allows a server to indicate any other origins than its own from which a browser should permit loading of resources.</li>
+            <li>Simple requests must meet the following conditions:</li>
+            <li><ul>
+                <li>One of the allowed methods: GET, HEAD, or POST.</li>
+                <li>Only these headers are allowed to be manually set: Accept, Accept-Language, Content-Language, and Content-Type.</li>
+                <li>The only allowed values for the Content-Type header are: application/x-www-form-urlencoded, multipart/form-data, and text/plain.</li>
+                <li>If the request is made using an XMLHttpRequest object, no event listeners are registered on the object returned by the XMLHttpRequest.upload property used in the request.</li>
+                <li>No ReadableStream object is used in the request.</li>
+            </ul></li>
+            <li>For Preflighted requests, the browser first sends an HTTP request using the OPTIONS method to the resource on the other origin, in order to determine if the actual request is safe to send.</li>
+            <li>Requests with credentials require a specific flag to be set on the XMLHttpRequest object or the Request constructor.</li>
+
+        </ul><br>
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 11:</strong> Further Functions</h3>
+        <hr>
+        <h3>Further Functions</h3>
+        <ul>
+            <li>A callback is a function that's provided as an argument to another function.</li>
+            <li>Promises can be used instead of callback to deal with multiple asynchronous actions in sequence.</li>
+            <li>A generator function (created by placing an * after the function keyword) will return an iterator object that provides a next() method, which returns the next value in a sequence that is defined in the generator function.</li>
+            <li>Functional programming involves breaking processes down into steps that can be applied as a series of functions.</li>
+            <li>Higher-order functions are functions that accept another function as an argument or return another function as a result, or both.</li>
+            <li>Currying is a process that involves the partial application of functions and relies on higher-order functions that are able to return partially applied functions.</li>
+
+        </ul><br>
+
+        <h3><strong><cite>JavaScript: Novice to Ninja</cite> Chapter 13:</strong> Ajax</h3>
+        <hr>
+        <h3>Ajax</h3>
+        <ul>
+            <li>Ajax is a technique that allows web pages to communicate asynchronously with a server and dynamically updates web pages without reloading.</li>
+            <li>Allows for partial page updates.</li>
+            <li>Ajax can be used to communicate with external APIs and requests can be made using the Fetch API.</li>
+            <li>The Response interface deals with the object returned when the promise is fulfilled.</li>
+            <li>The data is most often sent in JSON, but can be sent in other forms.</li>
+            <li>The Request object allows for more fine-grained control over the request being made.</li>
+            <li>The Headers interface can be used to create a Headers object, which can be added as a property of Request and Response.</li>
+            <li>The FormData interface helps to reduce the amount of code needed when submitting forms.</li>
+
+        </ul>
+
+
+    </main>
+    <div class="buttonHolder">
+        <form>
+            <input type="button" id="backBtn" value="Return to previous page" onclick="history.back()">
+        </form>
+    </div>
+    <footer>
+        <p>&copy;2021 | Jennifer C. Thomas | Location: Utah | <a href="http://www.byui.edu/online"
+                target="_blank">BYU-Idaho Online Learning</a></p>
+        Last Updated: <span id="currentdate"></span>
+    </footer>
+    <script src="../js/currentdate.js"></script>
+</body>
+
+</html>

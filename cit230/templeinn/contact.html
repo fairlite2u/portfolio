@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us | Temple Inn & Suites | Temples | Reservations | Services</title>
+    <meta name="description" content="Providing lodging and services related to temple visits around the world">
+    <link href=" https://fonts.googleapis.com/css?family=Lato%7cTangerine:700&display=swap" rel="stylesheet">
+    <link href="css/normalize.min.css" rel="stylesheet">
+    <link href="css/small.min.css" rel="stylesheet">
+    <link href="css/medium.min.css" rel="stylesheet">
+    <link href="css/large.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo50.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logobar">
+            <a href="./">
+                <img class="logohead" src="images/logo.png" alt="Temple Inn & Suites Logo">
+            </a>
+        </div>
+        <div class="navbar">
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#" class="menu" onclick="toggleMenu()">&equiv; Menu</a></li>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="temples.html">Temples</a></li>
+                    <li><a href="reservations.html">Reservations</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="contactbox">
+        <h1>Contact Us</h1>
+        <div class="contactpage">
+            <div class="row">
+                <div class="column address">
+                    <div id="mailing">
+                        <br>
+                        <p class="bold">Temple Inn & Suites</p>
+                        <p class="bold">Corporate Headquarters</p>
+                        <br>
+                        <p>4800 Montgomery Ln #300</p>
+                        <p>Bethesda, MD 20814</p>
+                        <br>
+                        <p>&phone; &nbsp; 301.555.5555</p>
+                        <p>&#9993; &nbsp; info@templeinnandsuites.com</p>
+                        <br>
+                    </div>
+                    <div class="mapsize">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d387.6744023889959!2d-77.0958598!3d38.9834755!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7c97b6b3b5b43%3A0x9c8eb1c5547b83eb!2s4800+Montgomery+Ln+%23300%2C+Bethesda%2C+MD+20814!5e0!3m2!1sen!2sus!4v1563944211693!5m2!1sen!2sus"
+                            width="400" height="300" style="border:0" allowfullscreen title="templeinnmap"
+                            id="templeinnmap"></iframe>
+                    </div>
+                </div>
+                <div class="column contactform">
+                    <form method="GET" action="thanks.html" name="contact">
+                        <label for="contactname">Name</label>
+                        <input id="contactname" type="text" name="name">
+                        <label for="contactemail">Email</label>
+                        <input id="contactemail" type="text" name="email">
+                        <label for="contactsubject">Subject</label>
+                        <input id="contactsubject" type="text" name="subject">
+                        <label for="contactmessage">Message</label>
+                        <textarea id="contactmessage" name="message"></textarea>
+                        <div id="conbutton">
+                            <input class="contactbutton" type="submit" value="Send Message">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy;2019 Temple Inn & Suites | <a class="sources" href="sources.html">Attributions</a> | Designed by Aspie
+            Design<br>
+            <span id="currentdate">
+            </span>
+        </p>
+    </footer>
+    <script src="js/hamburger.js"></script>
+    <script src="js/currentdate.js"></script>
+</body>
+
+</html>

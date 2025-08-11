@@ -1,0 +1,41 @@
+body {
+    background-color: wheat;
+}
+
+#container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.examples {
+    width: 350px;
+    height: 350px;
+    margin: 2px;
+    padding: 12px;
+    text-align: center;
+    border: grey solid 3px;
+}
+
+.square {
+    margin: 100px;
+    width: 100px;
+    height: 100px;
+}
+
+#square1 {
+    background: #d16;
+}
+
+#square2 {
+    background: yellow;
+}
+
+/* Using CSS for the animation instead: */
+#square3 {
+    background: cyan;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); } to { transform:rotate(360deg);}
+}

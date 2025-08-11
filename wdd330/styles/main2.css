@@ -1,0 +1,16 @@
+ul {
+    list-style-type: none;
+}
+
+ul a {
+    background-color: silver;
+    display: inline-block;
+    padding: 2px;
+    text-decoration: none;
+    width: 80%;
+
+}
+
+h1 {
+    color: slategray;
+}
