@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planet Jumper</title>
+  <link rel="stylesheet" href="planet-jumper.css">
+</head>
+
+<body>
+  <div id="game-container">
+    <canvas id="game-canvas" width="600" height="500"></canvas>
+    <div id="score">0</div>
+
+    <div id="start-screen">
+      <div id="title">PLANET JUMPER</div>
+      <p style="color: #fff; text-align: center; max-width: 80%;">
+        Jump from planet to planet and explore the galaxy!<br>
+        Use LEFT/RIGHT arrows or tilt your device to move.
+      </p>
+      <button id="start-btn">START</button>
+    </div>
+
+    <div id="game-over">
+      <h1>GAME OVER</h1>
+      <div id="final-score">Score: 0</div>
+      <button id="restart-btn">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="planet-jumper.js"></script>
+</body>
+
+</html>

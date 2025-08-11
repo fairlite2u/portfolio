@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Deep space background with gradient -->
+  <defs>
+    <radialGradient id="spaceGrad4" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#090D09"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    
+    <!-- Main nebula glow -->
+    <radialGradient id="nebulaGlow4" cx="55%" cy="45%" r="60%" fx="50%" fy="40%">
+      <stop offset="0%" stop-color="#32CD32" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#228B22" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#006400" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Secondary nebula glow -->
+    <radialGradient id="nebulaGlow4b" cx="30%" cy="65%" r="35%" fx="25%" fy="60%">
+      <stop offset="0%" stop-color="#7CFC00" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#32CD32" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#006400" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Star filter -->
+    <filter id="starGlow4" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.3" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.1 0 1 0 0 0.3 0 0 1 0 0.1 0 0 0 1 0" result="glow"/>
+      <feBlend in="SourceGraphic" in2="glow" mode="normal"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100" height="100" fill="url(#spaceGrad4)"/>
+  
+  <!-- Dust and gas clouds -->
+  <path d="M20,45 Q40,25 60,35 T90,55 Q80,75 50,70 T20,45" fill="#228B22" opacity="0.2"/>
+  <path d="M25,50 Q45,30 65,40 T95,60 Q85,80 55,75 T25,50" fill="#3CB371" opacity="0.3"/>
+  <path d="M15,55 Q35,35 55,45 T85,65 Q75,85 45,80 T15,55" fill="#90EE90" opacity="0.2"/>
+  
+  <!-- Main nebula glow -->
+  <circle cx="55" cy="45" r="38" fill="url(#nebulaGlow4)"/>
+  
+  <!-- Secondary nebula feature -->
+  <circle cx="30" cy="65" r="28" fill="url(#nebulaGlow4b)"/>
+  
+  <!-- Nebula structures -->
+  <path d="M45,35 C55,25 65,35 75,30 S85,40 90,35" stroke="#90EE90" stroke-width="2" opacity="0.5" fill="none"/>
+  <path d="M20,60 C30,70 40,65 50,75" stroke="#90EE90" stroke-width="2" opacity="0.5" fill="none"/>
+  
+  <!-- Dark dust lanes -->
+  <path d="M30,45 Q50,60 70,50" stroke="#003300" stroke-width="3" opacity="0.3" fill="none"/>
+  
+  <!-- Cluster of small stars (background) -->
+  <g opacity="0.6">
+    <circle cx="12" cy="12" r="0.5" fill="white"/>
+    <circle cx="28" cy="8" r="0.4" fill="white"/>
+    <circle cx="88" cy="15" r="0.3" fill="white"/>
+    <circle cx="95" cy="30" r="0.4" fill="white"/>
+    <circle cx="85" cy="92" r="0.5" fill="white"/>
+    <circle cx="70" cy="88" r="0.3" fill="white"/>
+    <circle cx="10" cy="82" r="0.4" fill="white"/>
+    <circle cx="8" cy="62" r="0.5" fill="white"/>
+  </g>
+  
+  <!-- Brighter stars with glow effect -->
+  <g filter="url(#starGlow4)">
+    <circle cx="25" cy="20" r="0.8" fill="white"/>
+    <circle cx="80" cy="25" r="1" fill="white"/>
+    <circle cx="70" cy="80" r="0.9" fill="white"/>
+    <circle cx="20" cy="70" r="0.8" fill="white"/>
+    <circle cx="60" cy="30" r="1.2" fill="white"/>
+    <circle cx="35" cy="45" r="0.7" fill="white"/>
+    <circle cx="75" cy="60" r="1" fill="white"/>
+  </g>
+  
+  <!-- Brightest stars with cross flare -->
+  <g>
+    <circle cx="38" cy="15" r="1.3" fill="white"/>
+    <line x1="38" y1="11" x2="38" y2="19" stroke="white" stroke-width="0.3" opacity="0.7"/>
+    <line x1="34" y1="15" x2="42" y2="15" stroke="white" stroke-width="0.3" opacity="0.7"/>
+    
+    <circle cx="82" cy="68" r="1.2" fill="white"/>
+    <line x1="82" y1="64" x2="82" y2="72" stroke="white" stroke-width="0.3" opacity="0.7"/>
+    <line x1="78" y1="68" x2="86" y2="68" stroke="white" stroke-width="0.3" opacity="0.7"/>
+  </g>
+</svg>

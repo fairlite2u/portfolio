@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Background -->
+  <rect width="300" height="300" fill="#111133" rx="10" ry="10"/>
+  
+  <!-- Alien Body -->
+  <path d="M100,120 L120,220 L180,220 L200,120 Z" fill="#50FA7B"/>
+  
+  <!-- Alien Head -->
+  <ellipse cx="150" cy="90" rx="60" ry="40" fill="#50FA7B"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="130" cy="85" rx="15" ry="10" fill="#111133"/>
+  <ellipse cx="170" cy="85" rx="15" ry="10" fill="#111133"/>
+  <path d="M120,85 L140,85" stroke="#FF5555" stroke-width="4"/>
+  <path d="M160,85 L180,85" stroke="#FF5555" stroke-width="4"/>
+  
+  <!-- Mouth -->
+  <path d="M130,110 L170,110" stroke="#111133" stroke-width="4"/>
+  <path d="M130,110 L125,105 M140,110 L140,105 M150,110 L150,105 M160,110 L160,105 M170,110 L175,105" 
+        stroke="#111133" stroke-width="2"/>
+  
+  <!-- Arms -->
+  <path d="M100,140 L60,180" stroke="#50FA7B" stroke-width="12" fill="none"/>
+  <path d="M200,140 L240,180" stroke="#50FA7B" stroke-width="12" fill="none"/>
+  
+  <!-- Hands with three fingers -->
+  <path d="M60,180 L40,170 M60,180 L50,185 M60,180 L40,195" stroke="#50FA7B" stroke-width="6" fill="none"/>
+  <path d="M240,180 L260,170 M240,180 L250,185 M240,180 L260,195" stroke="#50FA7B" stroke-width="6" fill="none"/>
+  
+  <!-- Legs -->
+  <path d="M130,220 L110,270" stroke="#50FA7B" stroke-width="12" fill="none"/>
+  <path d="M170,220 L190,270" stroke="#50FA7B" stroke-width="12" fill="none"/>
+  
+  <!-- Feet -->
+  <ellipse cx="110" cy="275" rx="15" ry="8" fill="#50FA7B"/>
+  <ellipse cx="190" cy="275" rx="15" ry="8" fill="#50FA7B"/>
+  
+  <!-- Head Features -->
+  <path d="M100,70 Q150,30 200,70" fill="none" stroke="#50FA7B" stroke-width="5"/>
+  <circle cx="100" cy="70" r="8" fill="#FF5555"/>
+  <circle cx="200" cy="70" r="8" fill="#FF5555"/>
+  
+  <!-- Body Patterns -->
+  <path d="M120,150 L180,150 M120,180 L180,180" stroke="#111133" stroke-width="3" fill="none"/>
+  
+  <!-- Energy Glow -->
+  <ellipse cx="150" cy="160" rx="85" ry="125" fill="none" stroke="#FF5555" stroke-width="2" opacity="0.4"/>
+</svg>

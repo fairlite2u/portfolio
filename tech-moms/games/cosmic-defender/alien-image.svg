@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <!-- Background -->
+  <circle cx="150" cy="150" r="120" fill="#1a1a2e" opacity="0.3"/>
+  
+  <!-- Alien Body -->
+  <path d="M110,160 C110,230 130,260 150,260 C170,260 190,230 190,160 L180,120 L120,120 Z" fill="#0f9b0f"/>
+  
+  <!-- Ribbed texture on body -->
+  <path d="M120,140 L180,140" stroke="#086108" stroke-width="2" fill="none"/>
+  <path d="M118,160 L182,160" stroke="#086108" stroke-width="2" fill="none"/>
+  <path d="M116,180 L184,180" stroke="#086108" stroke-width="2" fill="none"/>
+  <path d="M116,200 L184,200" stroke="#086108" stroke-width="2" fill="none"/>
+  <path d="M120,220 L180,220" stroke="#086108" stroke-width="2" fill="none"/>
+  <path d="M125,240 L175,240" stroke="#086108" stroke-width="2" fill="none"/>
+  
+  <!-- Head -->
+  <path d="M120,120 C120,60 180,60 180,120 Z" fill="#0f9b0f"/>
+  
+  <!-- Eyes -->
+  <path d="M125,95 C125,80 145,80 145,95 Z" fill="#e60000"/>
+  <path d="M155,95 C155,80 175,80 175,95 Z" fill="#e60000"/>
+  
+  <!-- Pupils - Slitted -->
+  <line x1="135" y1="85" x2="135" y2="95" stroke="black" stroke-width="2"/>
+  <line x1="165" y1="85" x2="165" y2="95" stroke="black" stroke-width="2"/>
+  
+  <!-- Mouth - Menacing -->
+  <path d="M130,115 C140,125 160,125 170,115" fill="none" stroke="#000" stroke-width="1"/>
+  <path d="M130,115 C140,110 160,110 170,115" fill="#222"/>
+  
+  <!-- Teeth -->
+  <path d="M135,115 L135,120" stroke="white" stroke-width="2"/>
+  <path d="M145,115 L145,120" stroke="white" stroke-width="2"/>
+  <path d="M155,115 L155,120" stroke="white" stroke-width="2"/>
+  <path d="M165,115 L165,120" stroke="white" stroke-width="2"/>
+  
+  <!-- Spikes on head -->
+  <path d="M130,70 L125,50" stroke="#0f9b0f" stroke-width="4" fill="none"/>
+  <path d="M150,65 L150,40" stroke="#0f9b0f" stroke-width="4" fill="none"/>
+  <path d="M170,70 L175,50" stroke="#0f9b0f" stroke-width="4" fill="none"/>
+  
+  <!-- Arms - More angular and threatening -->
+  <path d="M110,170 L60,150 L40,170" stroke="#0f9b0f" stroke-width="8" fill="none"/>
+  <path d="M190,170 L240,150 L260,170" stroke="#0f9b0f" stroke-width="8" fill="none"/>
+  
+  <!-- Claws -->
+  <path d="M35,165 L45,175" stroke="#333" stroke-width="3"/>
+  <path d="M40,165 L50,175" stroke="#333" stroke-width="3"/>
+  <path d="M45,165 L55,175" stroke="#333" stroke-width="3"/>
+  
+  <path d="M265,165 L255,175" stroke="#333" stroke-width="3"/>
+  <path d="M260,165 L250,175" stroke="#333" stroke-width="3"/>
+  <path d="M255,165 L245,175" stroke="#333" stroke-width="3"/>
+  
+  <!-- Legs - More muscular and defined -->
+  <path d="M130,260 L110,290" stroke="#0f9b0f" stroke-width="10" fill="none"/>
+  <path d="M170,260 L190,290" stroke="#0f9b0f" stroke-width="10" fill="none"/>
+  
+  <!-- Feet with claws -->
+  <path d="M100,290 L120,290" stroke="#0f9b0f" stroke-width="10" fill="none"/>
+  <path d="M180,290 L200,290" stroke="#0f9b0f" stroke-width="10" fill="none"/>
+  <path d="M100,290 L95,295" stroke="#333" stroke-width="3"/>
+  <path d="M105,290 L100,295" stroke="#333" stroke-width="3"/>
+  <path d="M115,290 L110,295" stroke="#333" stroke-width="3"/>
+  <path d="M195,290 L200,295" stroke="#333" stroke-width="3"/>
+  <path d="M190,290 L195,295" stroke="#333" stroke-width="3"/>
+  <path d="M185,290 L190,295" stroke="#333" stroke-width="3"/>
+  
+  <!-- Surface details -->
+  <ellipse cx="120" cy="190" rx="10" ry="5" fill="#086108" opacity="0.7"/>
+  <ellipse cx="180" cy="190" rx="10" ry="5" fill="#086108" opacity="0.7"/>
+  <path d="M140,210 C145,215 155,215 160,210" stroke="#086108" stroke-width="2" fill="none"/>
+</svg>

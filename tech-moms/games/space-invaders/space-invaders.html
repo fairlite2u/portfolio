@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Invaders with Emojis</title>
+  <link rel="stylesheet" href="space-invaders.css">
+</head>
+
+<body>
+  <div class="game-container">
+    <canvas id="gameCanvas" width="480" height="440"></canvas>
+    <div id="scoreDisplay" class="score-display">Score: 0</div>
+    <div id="startScreen" class="overlay" style="display: flex;">
+      <h1>Space Invaders</h1>
+      <p>Use LEFT/RIGHT arrows to move</p>
+      <p>Press SPACE to shoot</p>
+      <button id="startButton">Start Game</button>
+    </div>
+    <div id="gameOverScreen" class="overlay">
+      <h1>Game Over</h1>
+      <p id="finalScore">Your Score: 0</p>
+      <button id="restartButton">Play Again</button>
+    </div>
+  </div>
+
+  <script src="space-invaders.js"></script>
+</body>
+
+</html>

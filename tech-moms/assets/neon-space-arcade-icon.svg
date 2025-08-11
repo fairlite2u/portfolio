@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background -->
+  <rect width="100" height="100" fill="#0A0A2A" rx="15" ry="15"/>
+  
+  <!-- Stylized Arcade Machine Outline -->
+  <rect x="20" y="25" width="60" height="50" fill="#1A1A4A" stroke="#00FFFF" stroke-width="3" rx="5" ry="5"/>
+  
+  <!-- Screen Area -->
+  <rect x="25" y="30" width="50" height="35" fill="#000" stroke="#00FFFF" stroke-width="2"/>
+  
+  <!-- Neon Pixel/Space Elements -->
+  <circle cx="35" cy="47" r="3" fill="#FF00FF"/>
+  <circle cx="50" cy="40" r="2" fill="#00FFFF"/>
+  <circle cx="65" cy="55" r="4" fill="#FF00FF"/>
+  
+  <!-- Joystick -->
+  <rect x="75" y="60" width="10" height="10" fill="#333" rx="2" ry="2"/>
+  
+  <!-- Buttons -->
+  <circle cx="30" cy="70" r="5" fill="#FF00FF"/>
+  <circle cx="45" cy="70" r="5" fill="#00FFFF"/>
+</svg>

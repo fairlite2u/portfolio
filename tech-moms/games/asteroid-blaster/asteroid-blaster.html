@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asteroid Blaster</title>
+  <link rel="stylesheet" href="asteroid-blaster.css">
+</head>
+
+<body>
+  <div id="game-container">
+    <canvas id="game-canvas" width="700" height="490"></canvas>
+    <div id="score-display">Score: 0</div>
+    <div id="lives-display">Lives: 3</div>
+
+    <div id="instructions">
+      <h1>ASTEROID BLASTER</h1>
+      <p>Navigate your spaceship to all 5 green targets while avoiding or blasting asteroids!</p>
+
+      <div class="key-container">
+        <span class="key">↑</span>
+      </div>
+      <div class="key-container">
+        <span class="key">←</span>
+        <span class="key">↓</span>
+        <span class="key">→</span>
+      </div>
+      <p>Use arrow keys to move your spaceship</p>
+
+      <div class="key-container">
+        <span class="key" style="min-width: 80px;">SPACE</span>
+      </div>
+      <p>Press SPACE to shoot lasers and destroy asteroids!</p>
+      <p>The more asteroids you destroy, the higher your score!</p>
+
+      <p class="hint">Touch all 5 green targets at the top of the screen to win!</p>
+      <p class="hint">The blue area at the bottom is a safe zone where asteroids can't hurt you</p>
+
+      <button id="start-button">START GAME</button>
+    </div>
+
+    <div id="game-over">
+      <h1>GAME OVER</h1>
+      <p>Final Score: <span id="final-score">0</span></p>
+      <button id="restart-button">Play Again</button>
+    </div>
+
+    <div id="victory">
+      <h1>VICTORY!</h1>
+      <p>Final Score: <span id="victory-score">0</span></p>
+      <button id="play-again-button">Play Again</button>
+    </div>
+  </div>
+
+  <script src="asteroid-blaster.js"></script>
+</body>
+
+</html>

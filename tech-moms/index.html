@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Space Arcade</title>
+  <link rel="shortcut icon" href="assets/neon-space-arcade-icon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+  <div class="background">
+    <!-- <div class="stars" id="stars"></div> -->
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>Neon Space Arcade</h1>
+      <p>Choose your game or let fate decide</p>
+    </header>
+
+    <div class="randomizer">
+      <button id="random-game" class="button">Random Game</button>
+    </div>
+
+    <div class="games-grid" id="games-grid">
+      <!-- Games will be inserted here by JavaScript -->
+    </div>
+  </div>
+
+  <div class="modal" id="game-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Game Title</h2>
+        <button class="close-button" id="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="game-content" id="game-content">
+          <div id=" game-html"></div>
+          <p class="game-placeholder game-html">This is where the game would be displayed. In a real implementation, the
+            game
+            would be embedded here or the game interface would be built into this area.</p>
+          <p>Game controls and instructions would appear here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Aspie Designs &copy; 2025 | Blast off into gaming bliss</p>
+    <p><span id="currentdate"></span></p>
+  </footer>
+
+  <script src="scripts/currentDate.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>

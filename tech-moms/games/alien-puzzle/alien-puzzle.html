@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Tetris!</title>
+  <link rel="stylesheet" href="alien-puzzle.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger">
+      <div></div>
+    </div>
+    <div class="menu">
+      <div class="menu-content">
+      </div>
+      <div class="start-screen">
+        <h1 class="game-title">ALIEN TETRIS</h1>
+        <button class="close fw-400">PLAY</button>
+        <div class="instructions">
+          Arrow Keys to move<br>
+          Hold down to drop fast<br>
+          Up Arrow to rotate<br>
+          Space to pause<br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="game-over start-screen">
+    <div class="g-o">GAME OVER</div>
+    <div id="final-score" class="restart g-o"> </div>
+    <button class="restart-btn">PLAY AGAIN</button>
+  </div>
+  <header>
+    <h1 class="fw-300 t-ucase game-title2"><span class="fw-400 t-wide t-big t-ucase">alien tetris</span></h1>
+  </header>
+  <main class="game-area">
+    <div class="game">
+      <div class="grid"></div>
+    </div>
+    <section>
+      <div class="display">
+        <h1 class="score fw-400 t-ucase">Your Score <br> <span class="score-display t-ucase fw-300">0</span></h1>
+        <div class="previous-shape">
+          <div class="previous-grid"></div>
+        </div>
+        <h2 class="lines-display fw-400 t-ucase">Lines:<span class="lines-score">0</span></h2>
+      </div>
+      <button class="button t-ucase start" href="#">Start / Pause</button>
+    </section>
+  </main>
+  <script src="alien-puzzle.js" charset="utf-8"></script>
+</body>
+
+</html>

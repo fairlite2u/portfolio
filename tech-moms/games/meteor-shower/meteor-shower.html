@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Meteor Shower - Space Flappy Bird</title>
+  <link rel="stylesheet" href="meteor-shower.css">
+</head>
+
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas" width="600" height="480"></canvas>
+    <div id="score-display" class="score">Score: 0</div>
+
+    <div id="start-screen">
+      <h1>METEOR SHOWER</h1>
+      <p>Navigate your spaceship through the meteor field!</p>
+      <button id="start-button">START GAME</button>
+      <button id="instructions-button">HOW TO PLAY</button>
+    </div>
+
+    <div id="instructions-screen" style="display: none;">
+      <h1>HOW TO PLAY</h1>
+
+      <div class="instruction-grid">
+        <div class="instruction-box">
+          <h2>Controls</h2>
+          <p>Press <span class="key">SPACE</span> or tap screen to thrust upward</p>
+          <p>Release to let gravity pull you down</p>
+        </div>
+
+        <div class="instruction-box">
+          <h2>Objective</h2>
+          <p>Navigate through gaps between meteors</p>
+          <p>Each gap passed = 1 point</p>
+        </div>
+
+        <div class="instruction-box">
+          <h2>Tips</h2>
+          <p>Tap lightly to maintain altitude</p>
+          <p>Plan your path in advance</p>
+        </div>
+
+        <div class="instruction-box">
+          <h2>Game Over</h2>
+          <p>Hitting meteors = Game Over</p>
+          <p>Hitting top/bottom = Game Over</p>
+        </div>
+      </div>
+
+      <button id="back-button">BACK TO MENU</button>
+    </div>
+
+    <div id="countdown-screen" style="display: none;">
+      <div class="countdown" id="countdown-number">3</div>
+      <p>Prepare for launch!</p>
+    </div>
+
+    <div id="game-over-screen" style="display: none;">
+      <h1>GAME OVER</h1>
+      <p>Your spacecraft was destroyed!</p>
+      <p id="final-score">Score: 0</p>
+      <button id="restart-button">TRY AGAIN</button>
+      <button id="menu-button">MAIN MENU</button>
+    </div>
+  </div>
+
+  <script src="meteor-shower.js"></script>
+</body>
+
+</html>

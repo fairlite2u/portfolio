@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Neon blue square -->
+  <rect width="100" height="100" fill="#00BFFF"/>
+  
+  <!-- Add a subtle glow effect for the neon look -->
+  <rect width="100" height="100" fill="none" stroke="#00FFFF" stroke-width="5" filter="url(#glow)"/>
+  
+  <!-- Define the glow filter -->
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+</svg>
